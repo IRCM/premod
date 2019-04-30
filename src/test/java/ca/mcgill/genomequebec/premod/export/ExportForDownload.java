@@ -56,10 +56,12 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
 import org.springframework.context.ConfigurableApplicationContext;
+import org.springframework.stereotype.Component;
 
 /**
  * Export data in old format.
  */
+@Component
 public class ExportForDownload {
   private static class CreateWriterListener {
     public void writerCreated(Writer writer) throws IOException {
@@ -228,22 +230,28 @@ public class ExportForDownload {
           writer.write(module.getScore() != null ? String.valueOf(module.getScore()) : "\\N");
           writer.write("\t");
           writer.write(module.getDownstreamGenePosition() != null
-              ? String.valueOf(module.getDownstreamGenePosition()) : "\\N");
+              ? String.valueOf(module.getDownstreamGenePosition())
+              : "\\N");
           writer.write("\t");
           writer.write(module.getDownstreamGeneLocus() != null
-              ? String.valueOf(module.getDownstreamGeneLocus()) : "\\N");
+              ? String.valueOf(module.getDownstreamGeneLocus())
+              : "\\N");
           writer.write("\t");
           writer.write(module.getDownstreamGeneName() != null
-              ? String.valueOf(module.getDownstreamGeneName()) : "\\N");
+              ? String.valueOf(module.getDownstreamGeneName())
+              : "\\N");
           writer.write("\t");
           writer.write(module.getUpstreamGenePosition() != null
-              ? String.valueOf(module.getUpstreamGenePosition()) : "\\N");
+              ? String.valueOf(module.getUpstreamGenePosition())
+              : "\\N");
           writer.write("\t");
-          writer.write(module.getUpstreamGeneLocus() != null
-              ? String.valueOf(module.getUpstreamGeneLocus()) : "\\N");
+          writer.write(
+              module.getUpstreamGeneLocus() != null ? String.valueOf(module.getUpstreamGeneLocus())
+                  : "\\N");
           writer.write("\t");
-          writer.write(module.getUpstreamGeneName() != null
-              ? String.valueOf(module.getUpstreamGeneName()) : "\\N");
+          writer.write(
+              module.getUpstreamGeneName() != null ? String.valueOf(module.getUpstreamGeneName())
+                  : "\\N");
           writer.write("\t");
           writer.write(module.isCpgIsland() ? "1" : "0");
           writer.write("\n");
@@ -360,16 +368,19 @@ public class ExportForDownload {
           writer.write("\t");
           writer.write(String.valueOf(unitOccurrence.getAssembly()));
           writer.write("\t");
-          writer.write(unitOccurrence.getOccScore() != null
-              ? String.valueOf(unitOccurrence.getOccScore()) : "\\N");
+          writer.write(
+              unitOccurrence.getOccScore() != null ? String.valueOf(unitOccurrence.getOccScore())
+                  : "\\N");
           writer.write("\t");
           writer.write(unitOccurrence.getTotalScore() != null
-              ? String.valueOf(unitOccurrence.getTotalScore()) : "\\N");
+              ? String.valueOf(unitOccurrence.getTotalScore())
+              : "\\N");
           writer.write("\t");
           writer.write(String.valueOf(unitOccurrence.getModule().getName()));
           writer.write("\t");
           writer.write(unitOccurrence.getTagNumber() != null
-              ? String.valueOf(Integer.parseInt(unitOccurrence.getTagNumber()) - 1) : "\\N");
+              ? String.valueOf(Integer.parseInt(unitOccurrence.getTagNumber()) - 1)
+              : "\\N");
           writer.write("\n");
         } catch (IOException e) {
           ExceptionUtils.optionallyPackageRuntimeException(e, "Could not write to writer");
@@ -454,17 +465,23 @@ public class ExportForDownload {
           columns[2] = String.valueOf(module.getLength());
           columns[3] = module.getScore() != null ? String.valueOf(module.getScore()) : "\\N";
           columns[4] = module.getUpstreamGeneLocus() != null
-              ? String.valueOf(module.getUpstreamGeneLocus()) : "\\N";
+              ? String.valueOf(module.getUpstreamGeneLocus())
+              : "\\N";
           columns[5] = module.getUpstreamGeneName() != null
-              ? String.valueOf(module.getUpstreamGeneName()) : "\\N";
+              ? String.valueOf(module.getUpstreamGeneName())
+              : "\\N";
           columns[6] = module.getUpstreamGenePosition() != null
-              ? String.valueOf(module.getUpstreamGenePosition()) : "\\N";
+              ? String.valueOf(module.getUpstreamGenePosition())
+              : "\\N";
           columns[7] = module.getDownstreamGeneLocus() != null
-              ? String.valueOf(module.getDownstreamGeneLocus()) : "\\N";
+              ? String.valueOf(module.getDownstreamGeneLocus())
+              : "\\N";
           columns[8] = module.getDownstreamGeneName() != null
-              ? String.valueOf(module.getDownstreamGeneName()) : "\\N";
+              ? String.valueOf(module.getDownstreamGeneName())
+              : "\\N";
           columns[9] = module.getDownstreamGenePosition() != null
-              ? String.valueOf(module.getDownstreamGenePosition()) : "\\N";
+              ? String.valueOf(module.getDownstreamGenePosition())
+              : "\\N";
           int index = 10;
           for (Unit unit : moduleWithBestUnits.getBestUnits()) {
             columns[index++] = unit.getId() + " (" + unit.getName() + ")";
@@ -538,23 +555,29 @@ public class ExportForDownload {
           writer.write("\t");
           writer.write(module.getScore() != null ? String.valueOf(module.getScore()) : "\\N");
           writer.write("\t");
-          writer.write(module.getUpstreamGeneLocus() != null
-              ? String.valueOf(module.getUpstreamGeneLocus()) : "\\N");
+          writer.write(
+              module.getUpstreamGeneLocus() != null ? String.valueOf(module.getUpstreamGeneLocus())
+                  : "\\N");
           writer.write("\t");
-          writer.write(module.getUpstreamGeneName() != null
-              ? String.valueOf(module.getUpstreamGeneName()) : "\\N");
+          writer.write(
+              module.getUpstreamGeneName() != null ? String.valueOf(module.getUpstreamGeneName())
+                  : "\\N");
           writer.write("\t");
           writer.write(module.getUpstreamGenePosition() != null
-              ? String.valueOf(module.getUpstreamGenePosition()) : "\\N");
+              ? String.valueOf(module.getUpstreamGenePosition())
+              : "\\N");
           writer.write("\t");
           writer.write(module.getDownstreamGeneLocus() != null
-              ? String.valueOf(module.getDownstreamGeneLocus()) : "\\N");
+              ? String.valueOf(module.getDownstreamGeneLocus())
+              : "\\N");
           writer.write("\t");
           writer.write(module.getDownstreamGeneName() != null
-              ? String.valueOf(module.getDownstreamGeneName()) : "\\N");
+              ? String.valueOf(module.getDownstreamGeneName())
+              : "\\N");
           writer.write("\t");
           writer.write(module.getDownstreamGenePosition() != null
-              ? String.valueOf(module.getDownstreamGenePosition()) : "\\N");
+              ? String.valueOf(module.getDownstreamGenePosition())
+              : "\\N");
           for (Unit unit : moduleWithBestUnits.getBestUnits()) {
             writer.write("\t");
             writer.write(unit.getId() + " (" + unit.getName() + ")");
@@ -651,8 +674,9 @@ public class ExportForDownload {
           write(currentWriters, "\t");
           write(currentWriters, String.valueOf(module.getEnd()));
           write(currentWriters, "\t");
-          write(currentWriters, module.getScore() != null
-              ? String.valueOf(module.getScore().intValue() * 10) : "\\N");
+          write(currentWriters,
+              module.getScore() != null ? String.valueOf(module.getScore().intValue() * 10)
+                  : "\\N");
           write(currentWriters, "\t");
           write(currentWriters, ".");
           write(currentWriters, "\t");
