@@ -28,7 +28,7 @@
   <artifactId>premod</artifactId>
   <packaging>war</packaging>
   <name>premod</name>
-  <version>2.3-SNAPSHOT</version>
+  <version>2.3</version>
   <description>Database of genomic Modules</description>
   <url>http://genomequebec.mcgill.ca/PReMod</url>
   <inceptionYear>2013</inceptionYear>
