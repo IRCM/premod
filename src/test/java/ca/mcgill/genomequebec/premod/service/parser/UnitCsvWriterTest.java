@@ -36,7 +36,7 @@ import org.junit.runner.RunWith;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 /**
- * Tests for {@link UnitCsvWriter2}.
+ * Tests for {@link UnitCsvWriter}.
  */
 @RunWith(SpringJUnit4ClassRunner.class)
 @ServiceTestAnnotations
@@ -61,8 +61,8 @@ public class UnitCsvWriterTest {
       writer.close();
     }
 
-    File expected =
-        new File(this.getClass().getResource("/service/parser/human_statistic.csv").toURI());
+    File expected = new File(
+        this.getClass().getResource("/service/parser/human_statistic.csv").toURI());
     ExcelUtils.assertEqualsCsv(expected, actual);
   }
 }
