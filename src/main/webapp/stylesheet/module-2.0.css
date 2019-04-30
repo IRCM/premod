@@ -1,0 +1,143 @@
+/**
+ * Copyright (c) 2013 Institut de recherches cliniques de Montreal (IRCM)
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Affero General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU Affero General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
+body {margin-top:0; margin-left:0; background-color:#FFFFFF; color:#000000;}
+h1 {font-family:arial, sans-serif; font-size:12pt; font-weight:bold; text-align:center;}
+h2 {font-family:arial, sans-serif; font-size:10pt; font-weight:bold; text-align:center;}
+
+
+div.header {
+    width:789px;
+}
+div.header img {
+    border-width:0;
+}
+
+
+div.navbar
+{
+    font-family:arial, sans-serif;
+    font-size:8pt;
+    background-color:inherit;
+    color:inherit;
+    font-weight:bold;
+    width:789px;
+    position:absolute;
+    top:100px;
+    left:0;
+}
+div.navbar ul
+{
+    list-style-type:none;
+    list-style-position:inside;
+    background-color:#AAAAAA;
+    color:inherit;
+    padding:0;
+    margin:0;
+    text-align:center;
+    padding-top:1px;
+    padding-bottom:1px;
+    width:789px;
+}
+div.navbar ul li
+{
+    display:inline;
+    background-color:#AAAAAA;
+    color:#FFFFFF;
+    padding-left:10px;
+    padding-right:10px;
+    padding-top:1px;
+    padding-bottom:1px;
+}
+div.navbar ul li.current
+{
+    background-color:#DDDDDD;
+    color: #000000;
+}
+div.navbar ul li a:link {font-size:8pt; font-weight:bold; color:#FFFFFF; text-decoration:none; background-color:inherit;}
+div.navbar ul li a:visited {font-size:8pt; font-weight:bold; color:#FFFFFF; text-decoration:none; background-color:inherit;}
+div.navbar ul li a:hover {font-size:8pt; font-weight:bold; color:#FFFFFF; text-decoration:none; background-color:inherit;}
+div.navbar ul li.current a:link {font-size:8pt; font-weight:bold; color:#000000; text-decoration:none; background-color:inherit;}
+div.navbar ul li.current a:visited {font-size:8pt; font-weight:bold; color:#000000; text-decoration:none; background-color:inherit;}
+div.navbar ul li.current a:hover {font-size:8pt; font-weight:bold; color:#000000; text-decoration:none; background-color:inherit;}
+
+
+div.content
+{
+    padding-top:28px;
+    margin-left:15px;
+    margin-right:15px;
+    width:759px;
+    font-family:arial, sans-serif;
+    font-size:8pt;
+}
+div.message
+{
+    font-weight:bold;
+}
+div.caption
+{
+    font-size:10pt;
+    font-weight:bold;
+}
+ul.summary
+{
+    text-align:left;
+    margin:3px 3px 16px 16px;
+    padding:0;
+    list-style-position:inside;
+}
+ul.summary li
+{
+    display:list-item;
+}
+ul.summary li.sub
+{
+    margin-left:16px;
+}
+ul.organism
+{
+    list-style-position:inside;
+    list-style-type:none;
+    font-family:arial, sans-serif;
+    font-size:10pt;
+    font-weight:bold;
+    text-align:center;
+    margin:16px 0 16px 0;
+    padding:0;
+}
+ul.organism li
+{
+    display:list-item;
+    margin:10px 0 10px -16px;
+}
+html>body ul.organism li
+{
+    display:list-item;
+    margin:10px 0 10px 0;
+}
+
+
+div.footer {
+    text-align:center;
+    padding-top:8px;
+    margin-left:15px;
+    margin-right:15px;
+    margin-top:16px;
+    width:759px;
+    font-size:8pt;
+    clear:both;
+}

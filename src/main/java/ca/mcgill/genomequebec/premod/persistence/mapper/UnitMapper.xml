@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!--
+
+    Copyright (c) 2013 Institut de recherches cliniques de Montreal (IRCM)
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU Affero General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU Affero General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+-->
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="ca.mcgill.genomequebec.premod.persistence.mapper.UnitMapper">
+
+  <cache readOnly="true" />
+
+  <resultMap id="unitResult" type="ca.mcgill.genomequebec.premod.business.Unit">
+    <id property="id" column="unit__id" />
+    <result property="type" column="unit__type" />
+    <result property="name" column="unit__name" />
+    <result property="description" column="unit__description" />
+    <result property="length" column="unit__length" />
+  </resultMap>
+  <resultMap id="UnitLinkedToModule"
+    type="ca.mcgill.genomequebec.premod.persistence.mapper.UnitMapper$UnitLinkedToModule">
+    <id property="id" column="unit__id" />
+    <association property="unit" resultMap="unitResult" />
+    <association property="extra"
+      javaType="ca.mcgill.genomequebec.premod.service.UnitService$Extra">
+      <result property="tagNumber" column="module_to_unit__tag_number" />
+      <result property="minScore" column="module_to_unit__min_score" />
+      <result property="nbOccurrence" column="module_to_unit__nb_occurrence" />
+      <result property="tag" column="frequencies__tag" />
+      <result property="noTag" column="frequencies__notag" />
+      <result property="any" column="frequencies__any" />
+    </association>
+  </resultMap>
+  <resultMap id="SelectForStatistics"
+    type="ca.mcgill.genomequebec.premod.service.UnitService$UnitWithExtra$Default">
+    <result property="unit.id" column="unit__id" />
+    <result property="unit.type" column="unit__type" />
+    <result property="unit.name" column="unit__name" />
+    <result property="unit.description" column="unit__description" />
+    <result property="unit.length" column="unit__length" />
+    <result property="extra.tag" column="frequencies__tag" />
+    <result property="extra.noTag" column="frequencies__notag" />
+    <result property="extra.any" column="frequencies__any" />
+  </resultMap>
+  <resultMap id="UnitForExport"
+    type="ca.mcgill.genomequebec.premod.persistence.mapper.UnitMapper$UnitForExport"
+    extends="SelectForStatistics">
+    <result property="organism" column="frequencies__organism" />
+    <result property="version" column="frequencies__version_id" />
+  </resultMap>
+
+
+  <sql id="columns">
+    unit.id AS unit__id,
+    unit.type AS unit__type,
+    unit.name AS unit__name,
+    unit.description AS unit__description,
+    unit.length AS unit__length
+  </sql>
+  <sql id="moduleToUnitColumns">
+    module_to_unit.unit_id AS module_to_unit__unit_id,
+    module_to_unit.module_id AS module_to_unit__module_id,
+    module_to_unit.tag_number AS module_to_unit__tag_number,
+    module_to_unit.min_score AS module_to_unit__min_score,
+    module_to_unit.nb_occurrence AS module_to_unit__nb_occurrence
+  </sql>
+  <sql id="frequenciesColumns">
+    frequencies.tag AS frequencies__tag,
+    frequencies.notag AS frequencies__notag,
+    frequencies.any AS frequencies__any
+  </sql>
+
+
+  <select id="getUnitById" resultMap="unitResult" parameterType="string">
+    SELECT
+    <include refid="columns" />
+    FROM unit
+    WHERE unit.id = #{id}
+  </select>
+  <select id="existsById" resultType="boolean" parameterType="string">
+    SELECT IF(COUNT(unit.id) > 0, 1, 0)
+    FROM unit
+    WHERE unit.id = #{id}
+  </select>
+  <select id="selectBestByModule" resultMap="unitResult"
+    parameterType="ca.mcgill.genomequebec.premod.business.Module">
+    SELECT
+    <include refid="columns" />
+    FROM unit
+    JOIN module_to_unit
+    ON unit.id = module_to_unit.unit_id
+    WHERE module_to_unit.module_id = #{id}
+    AND module_to_unit.tag_number IS NOT NULL
+    ORDER BY module_to_unit.min_score DESC
+  </select>
+  <select id="selectNonBestByModule" resultMap="unitResult"
+    parameterType="ca.mcgill.genomequebec.premod.business.Module">
+    SELECT
+    <include refid="columns" />
+    FROM unit
+    JOIN module_to_unit
+    ON unit.id = module_to_unit.unit_id
+    WHERE module_to_unit.module_id = #{id}
+    AND module_to_unit.tag_number IS NULL
+    ORDER BY module_to_unit.min_score DESC
+  </select>
+  <select id="selectWithExtrasByModule" resultMap="UnitLinkedToModule"
+    parameterType="ca.mcgill.genomequebec.premod.business.Module">
+    SELECT
+    <include refid="columns" />
+    ,
+    <include refid="moduleToUnitColumns" />
+    ,
+    <include refid="frequenciesColumns" />
+    FROM unit
+    JOIN module_to_unit
+    ON unit.id = module_to_unit.unit_id
+    JOIN frequencies
+    ON frequencies.unit_id = unit.id
+    AND frequencies.organism = #{organism}
+    AND frequencies.version_id = #{version}
+    WHERE module_to_unit.module_id = #{id}
+    ORDER BY module_to_unit.min_score DESC
+  </select>
+  <select id="selectForStatistics" resultMap="SelectForStatistics">
+    SELECT
+    <include refid="columns" />
+    ,
+    <include refid="frequenciesColumns" />
+    FROM unit
+    JOIN frequencies
+    ON frequencies.unit_id = unit.id
+    AND frequencies.organism = #{organism}
+    AND frequencies.version_id = #{version}
+  </select>
+
+  <select id="selectAllForStatistics" resultMap="UnitForExport"
+    useCache="false" fetchSize="-2147483648" resultSetType="FORWARD_ONLY">
+    SELECT
+    <include refid="columns" />
+    ,
+    <include refid="frequenciesColumns" />
+    ,
+    frequencies.organism AS frequencies__organism,
+    frequencies.version_id AS frequencies__version_id
+    FROM unit
+    JOIN frequencies ON frequencies.unit_id = unit.id
+    ORDER BY unit.id
+  </select>
+</mapper>

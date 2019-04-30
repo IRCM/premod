@@ -1,0 +1,482 @@
+Unit Id,Name,Description,Tag,Other,Total
+M00001,MyoD,myoblast determination gene product,591,6308,6899
+M00002,E47,E47,632,6527,7159
+M00003,v-Myb,v-Myb,857,8691,9548
+M00004,c-Myb,c-Myb,567,5824,6391
+M00005,AP-4,activator protein 4,756,5379,6135
+M00006,MEF-2,myogenic enhancer factor 2,642,7537,8179
+M00007,Elk-1,Elk-1,483,4975,5458
+M00008,Sp1,stimulating protein 1,570,6472,7042
+M00011,Evi-1,ectopic viral integration site 1 encoded factor,935,5256,6191
+M00017,ATF,activating transcription factor,235,6177,6412
+M00023,Hox-1.3,Hox-1.3,810,6175,6985
+M00024,E2F,E2F,543,6415,6958
+M00025,Elk-1,Elk-1,475,5104,5579
+M00026,RSRFC4,"related to serum response factor, C4",398,7287,7685
+M00032,c-Ets-1(p54),c-Ets-1(p54),692,5615,6307
+M00033,p300,p300,636,3933,4569
+M00034,p53,tumor suppressor p53,120,432,552
+M00035,v-Maf,v-Maf,871,5155,6026
+M00036,v-Jun,v-Jun,150,2233,2383
+M00037,NF-E2,NF-E2 p45,682,4624,5306
+M00039,CREB,cAMP-responsive element binding protein,278,5768,6046
+M00040,CRE-BP1,cAMP-responsive element binding protein 1,338,6070,6408
+M00041,CRE-BP1/c-Jun,CRE-binding protein 1/c-Jun heterodimer,563,5797,6360
+M00042,Sox-5,Sox-5,1786,12713,14499
+M00045,E4BP4,E4BP4,489,7174,7663
+M00047,qa-1F,qa-1F,510,5166,5676
+M00050,E2F,E2F,510,7921,8431
+M00051,NF-kappaB (p50),NF-kappaB (p50),450,2480,2930
+M00052,NF-kappaB (p65),NF-kappaB (p65),394,3235,3629
+M00053,c-Rel,c-Rel,529,3379,3908
+M00054,NF-kappaB,NF-kappaB,351,2581,2932
+M00055,N-Myc,N-Myc,289,6083,6372
+M00056,myogenin / NF-1,myogenin / nuclear factor 1 or related factors,702,4737,5439
+M00057,COMP1,COMP1,715,5992,6707
+M00058,HEN1,HEN1,220,3020,3240
+M00059,YY1,Yin and Yang 1,765,6334,7099
+M00062,IRF-1,interferon regulatory factor 1,683,4642,5325
+M00063,IRF-2,interferon regulatory factor 2,474,3765,4239
+M00065,Tal-1beta/E47,Tal-1beta/E47 heterodimer,640,5790,6430
+M00066,Tal-1alpha/E47,Tal-1alpha/E47 heterodimer,733,6011,6744
+M00068,HEN1,HEN1,295,2979,3274
+M00069,YY1,Yin and Yang 1,544,4916,5460
+M00070,Tal-1beta/ITF-2,Tal-1beta/ITF-2 heterodimer,567,4949,5516
+M00071,E47,E47,620,5467,6087
+M00072,CP2,CP2,941,3601,4542
+M00073,deltaEF1,deltaEF1,896,4583,5479
+M00074,c-Ets-1(p54),c-Ets-1(p54),474,4284,4758
+M00075,GATA-1,GATA-binding factor 1,842,8222,9064
+M00076,GATA-2,GATA-binding factor 2,636,7465,8101
+M00077,GATA-3,GATA-binding factor 3,912,9167,10079
+M00078,Evi-1,ectopic viral integration site 1 encoded factor,353,2945,3298
+M00079,Evi-1,ectopic viral integration site 1 encoded factor,499,5024,5523
+M00080,Evi-1,ectopic viral integration site 1 encoded factor,261,4526,4787
+M00081,Evi-1,ectopic viral integration site 1 encoded factor,1427,12280,13707
+M00082,Evi-1,ectopic viral integration site 1 encoded factor,713,7511,8224
+M00083,MZF1,MZF1,690,3089,3779
+M00084,MZF1,MZF1,618,3480,4098
+M00085,ZID,zinc finger with interaction domain,704,3625,4329
+M00086,Ik-1,Ikaros 1,647,3335,3982
+M00087,Ik-2,Ikaros 2,639,2895,3534
+M00088,Ik-3,Ikaros 3,626,2724,3350
+M00095,CDP,cut-like homeodomain protein,697,9147,9844
+M00096,Pbx-1,Pbx-1,2139,20339,22478
+M00097,Pax-6,Pax-6,799,7011,7810
+M00098,Pax-2,Pax-2,1233,12539,13772
+M00099,S8,S8,2428,22918,25346
+M00100,CdxA,CdxA,2423,16635,19058
+M00101,CdxA,CdxA,3259,21504,24763
+M00102,CDP,transcriptional repressor CDP,455,9356,9811
+M00103,Clox,Clox,585,9444,10029
+M00104,CDP CR1,cut-like homeodomain protein,1422,12322,13744
+M00105,CDP CR3,cut-like homeodomain protein,545,4142,4687
+M00106,CDP CR3+HD,cut-like homeodomain protein,1246,7974,9220
+M00107,E2,papilloma virus regulator E2,351,4298,4649
+M00108,NRF-2,nuclear respiratory factor 2,534,4789,5323
+M00109,C/EBPbeta,CCAAT/enhancer binding protein beta,918,7240,8158
+M00113,CREB,cAMP-responsive element binding protein,402,7237,7639
+M00114,Tax/CREB,Tax/CREB complex,320,6650,6970
+M00115,Tax/CREB,Tax/CREB complex,377,4093,4470
+M00116,C/EBPalpha,CCAAT/enhancer binding protein alpha,883,13299,14182
+M00117,C/EBPbeta,CCAAT/enhancer binding protein beta,698,9048,9746
+M00118,c-Myc/Max,c-Myc/Max heterodimer,87,2179,2266
+M00119,Max,Max,61,2703,2764
+M00121,USF,upstream stimulating factor,75,3399,3474
+M00122,USF,upstream stimulating factor,280,3182,3462
+M00123,c-Myc/Max,c-Myc/Max heterodimer,704,5417,6121
+M00124,Pbx1b,homeo domain factor Pbx-1,806,7566,8372
+M00126,GATA-1,GATA-binding factor 1,767,9109,9876
+M00127,GATA-1,GATA-binding factor 1,803,8164,8967
+M00128,GATA-1,GATA-binding factor 1,965,9882,10847
+M00129,HFH-1,HNF-3/Fkh Homolog 1,948,13919,14867
+M00130,FOXD3,fork head box D3,1455,16361,17816
+M00131,HNF-3beta,Hepatocyte Nuclear Factor 3beta,1165,16010,17175
+M00132,HNF-1,hepatic nuclear factor 1,832,15691,16523
+M00133,Tst-1,POU-factor Tst-1/Oct-6,1412,12868,14280
+M00134,HNF-4,hepatic nuclear factor 4,623,4977,5600
+M00135,Oct-1,octamer factor 1,474,7729,8203
+M00136,Oct-1,octamer factor 1,1209,9429,10638
+M00137,Oct-1,octamer factor 1,2237,20764,23001
+M00138,Oct-1,octamer factor 1,2676,17074,19750
+M00139,AhR,aryl hydrocarbon / dioxin receptor,454,5666,6120
+M00141,Lyf-1,LyF-1,698,1853,2551
+M00143,BSAP,B-cell-specific activating protein,662,5775,6437
+M00144,BSAP,B-cell-specific activating protein,552,5620,6172
+M00145,Brn-2,POU factor Brn-2,1596,13857,15453
+M00146,HSF1,heat shock factor 1,521,3201,3722
+M00147,HSF2,heat shock factor 2,433,3219,3652
+M00148,SRY,sex-determining region Y gene product,1721,8965,10686
+M00149,SBF-1,SBF-1,2053,19145,21198
+M00150,Brachyury,Brachyury,159,582,741
+M00152,SRF,serum response factor,154,1242,1396
+M00155,ARP-1,apolipoprotein AI regulatory protein 1,899,3646,4545
+M00156,RORalpha1,RAR-related orphan receptor alpha1,880,5829,6709
+M00157,RORalpha2,RAR-related orphan receptor alpha2,626,3118,3744
+M00158,COUP-TF / HNF-4,COUP/HNF-4 heterodimer,658,4429,5087
+M00159,C/EBP,CCAAT/enhancer binding protein,736,7759,8495
+M00160,SRY,sex-determining region Y gene product,1694,15079,16773
+M00161,Oct-1,octamer-binding factor 1,974,10609,11583
+M00162,Oct-1,octamer-binding factor 1,1405,11101,12506
+M00172,AP-1,activator protein 1,528,6917,7445
+M00173,AP-1,activator protein 1,619,6921,7540
+M00174,AP-1,activator protein 1,556,6494,7050
+M00175,AP-4,activator protein 4,1053,6462,7515
+M00176,AP-4,activator protein 4,701,6694,7395
+M00177,CREB,cAMP-response element-binding protein,278,6335,6613
+M00178,CREB,cAMP-response element binding protein,157,5803,5960
+M00179,CRE-BP1,CRE-binding protein 1,303,6009,6312
+M00181,E2,papilloma virus regulator E2,418,4648,5066
+M00182,GBP,G-box binding proteins,295,7143,7438
+M00183,c-Myb,c-Myb,1015,7183,8198
+M00184,MyoD,myoblast determining factor,1043,7815,8858
+M00185,NF-Y,nuclear factor Y (Y-box binding factor),769,6641,7410
+M00186,SRF,serum response factor,427,2914,3341
+M00187,USF,upstream stimulating factor,612,5433,6045
+M00188,AP-1,activator protein 1,553,6608,7161
+M00189,AP-2,activator protein 2,1012,8368,9380
+M00190,C/EBP,CCAAT/enhancer binding factor,1101,13270,14371
+M00191,ER,estrogen receptor,960,5576,6536
+M00192,GR,glucocorticoid receptor,733,3827,4560
+M00193,NF-1,nuclear factor 1,1287,5415,6702
+M00194,NF-kappaB,NF-kappaB,397,2413,2810
+M00195,Oct-1,octamer factor 1,1175,12577,13752
+M00196,Sp1,stimulating protein 1,926,8150,9076
+M00200,CCAAT,Retroviral CCAAT box,509,4810,5319
+M00201,C/EBP,C/EBP binding site,765,6045,6810
+M00202,CRP,CRP binding site,1200,9416,10616
+M00203,GATA-X,GATA binding site,921,8687,9608
+M00205,GR,Glucocorticoid response element,745,3404,4149
+M00206,HNF-1,Hepatic nuclear factor 1,788,12474,13262
+M00207,LAC9,LAC9 binding site,513,5270,5783
+M00208,NF-kappaB,NF-kappaB binding site,389,2579,2968
+M00209,NF-Y,NF-Y  binding site,673,7174,7847
+M00210,OCT-x,Octamer binding site,869,11107,11976
+M00211,Poly A downstream element,Retroviral Poly A downstream element,793,3594,4387
+M00212,Retroviral Poly A,Retroviral Poly A signal,1015,5480,6495
+M00214,SEF-1,SEF1 binding site,342,2461,2803
+M00215,SRF,serum response factor,474,3328,3802
+M00216,TATA,Retroviral TATA box,2043,8716,10759
+M00217,USF,USF binding site,447,4586,5033
+M00218,MYB.Ph3,Myb-like protein of Petunia hybrida,711,6042,6753
+M00219,MYB.Ph3,Myb-like protein of Petunia hybrida,758,5575,6333
+M00220,SREBP-1,sterol regulatory element-binding protein 1,388,3795,4183
+M00221,SREBP-1,sterol regulatory element-binding protein 1,536,3846,4382
+M00222,Hand1/E47,Hand1/E47 heterodimer,1036,3846,4882
+M00223,STATx,signal transducers and activators of transcription,732,3581,4313
+M00224,STAT1,signal transducer and activator of transcription 1,152,1665,1817
+M00225,STAT3,signal transducer and activator of transcription 3,138,979,1117
+M00227,v-Myb,v-Myb,996,6856,7852
+M00228,VBP,PAR-type chicken vitellogenin promoter-binding protein,662,9964,10626
+M00231,MEF-2,myogenic MADS factor MEF-2,665,8720,9385
+M00232,MEF-2,myogenic MADS factor MEF-2,320,5875,6195
+M00233,MEF-2,myogenic MADS factor MEF-2,156,1542,1698
+M00235,AhR/Arnt,aryl hydrocarbon receptor / Arnt heterodimers,453,5431,5884
+M00236,Arnt,AhR nuclear translocator homodimers,202,4735,4937
+M00237,AhR/Arnt,"aryl hydrocarbon / Arnt heterodimers, fixed core",101,1459,1560
+M00238,Barbie Box,barbiturate-inducible element,1026,4338,5364
+M00239,v-ErbA,viral homolog of thyroid hormone receptor alpha1,529,4055,4584
+M00240,Nkx2-5,"homeo domain factor Nkx-2.5/Csx, tinman homolog",1536,6533,8069
+M00241,Nkx2-5,"homeo domain factor Nkx-2.5/Csx, tinman homolog",2659,19488,22147
+M00242,PPARalpha/RXR-alpha,PPAR/RXR heterodimers,389,2693,3082
+M00243,Egr-1,Egr-1/Krox-24/NGFI-A immediate-early gene product,177,3930,4107
+M00244,NGFI-C,nerve growth factor-induced protein C,251,3669,3920
+M00245,Egr-3,early growth response gene 3 product,89,2924,3013
+M00246,Egr-2,Egr-2/Krox-20 early growth response gene product,301,3575,3876
+M00248,Oct-1,octamer factor 1,794,8278,9072
+M00249,CHOP-C/EBPalpha,heterodimers of CHOP and C/EBPalpha,1285,6057,7342
+M00250,Gfi-1,growth factor independence 1,1606,8335,9941
+M00251,XBP-1,X-box-binding protein 1,290,5977,6267
+M00253,cap,cap signal for transcription initiation,693,4933,5626
+M00254,CCAAT box,cellular and viral CCAAT box,712,5641,6353
+M00255,GC box,GC box elements,711,5415,6126
+M00256,NRSF,neuron-restrictive silencer factor,82,641,723
+M00257,RREB-1,Ras-responsive element binding protein 1,1227,3801,5028
+M00258,ISRE,interferon-stimulated response element,607,3865,4472
+M00260,HLF,hepatic leukemia factor,918,10649,11567
+M00261,Olf-1,olfactory neuron-specific factor,735,3110,3845
+M00262,Staf,Se-Cys tRNA gene transcription activating factor,265,2064,2329
+M00264,Staf,Se-Cys tRNA gene transcription activating factor,576,3856,4432
+M00267,XFD-1,Xenopus fork head domain factor 1,1230,18332,19562
+M00268,XFD-2,Xenopus fork head domain factor 2,1063,17764,18827
+M00269,XFD-3,Xenopus fork head domain factor 3,789,12223,13012
+M00271,AML-1a,runt-factor AML-1,931,5353,6284
+M00272,p53,tumor suppressor p53,836,2750,3586
+M00273,R,Epstein-Barr virus transcription factor R,479,5192,5671
+M00277,Lmo2 complex,"complex of Lmo2 bound to Tal-1, E2A proteins, and GATA-1, half-site 1",904,6803,7707
+M00278,Lmo2 complex,"complex of Lmo2 bound to Tal-1, E2A proteins, and GATA-1, half-site 2",999,9150,10149
+M00279,MIF-1,MIBP-1 / RFX1 complex,464,4731,5195
+M00280,RFX1,X-box binding protein RFX1,654,4833,5487
+M00281,RFX1,X-box binding protein RFX1,964,4464,5428
+M00284,TCF11/MafG,TCF11/MafG heterodimers,675,5395,6070
+M00285,TCF11,TCF11/KCR-F1/Nrf1 homodimers,1268,6585,7853
+M00286,GKLF,gut-enriched Krueppel-like factor,558,1515,2073
+M00287,NF-Y,nuclear factor Y (Y-box binding factor),798,5606,6404
+M00289,HFH-3,HFH-3 (HNF3/fork head homolog 3),863,14383,15246
+M00290,Freac-2,Fork head RElated ACtivator-2,512,12195,12707
+M00291,Freac-3,Fork head RElated ACtivator-3,544,10383,10927
+M00292,Freac-4,Fork head RElated ACtivator-4,505,6200,6705
+M00293,Freac-7,Fork head RElated ACtivator-7,1080,17969,19049
+M00294,HFH-8,HNF-3/Fkh Homolog-8,693,14751,15444
+M00302,NF-AT,Nuclear factor of activated T-cells,843,3215,4058
+M00304,Dde box,"Dde box, N. crassa",1217,4526,5743
+M00309,ACAAT,Avian C-type CCAAT box,844,5600,6444
+M00310,APOLYA,Avian C-type PolyA signal,1185,10058,11243
+M00311,ATATA,Avian C-type TATA box,1412,10207,11619
+M00312,Bel-1,Bel-1 similar region,371,3331,3702
+M00313,GEN_INI,general initiator seq. (viral+cellular),338,5482,5820
+M00314,GEN_INI,general initiator seq.(viral+cellular),494,5177,5671
+M00315,GEN_INI,general initiator seq. (viral+cellular),283,5632,5915
+M00316,Imperfect Hogness/Goldberg BOX,Imperfect Hogness /Goldberg Box,70,179,249
+M00317,Poly A,Lentiviral Poly A downstream element,850,3887,4737
+M00318,Lentiviral Poly  A,Lentiviral Poly A signal,2273,15037,17310
+M00319,MEF-3,MEF-3,856,3782,4638
+M00320,Muscle TATA box,Muscle TATA box,1108,8867,9975
+M00321,Muscle initiator,Muscle initiator,902,8017,8919
+M00322,c-Myc/Max,c-Myc/Max binding sites,560,8673,9233
+M00323,Muscle initiator sequences-19,Muscle initiator sequences-19,472,7711,8183
+M00324,Muscle initiator sequence-20,Muscle initiator sequence-20,484,7131,7615
+M00325,neural-restr.-silencer-element,neural-restrictive-silencer-element,244,4146,4390
+M00326,Pax-1,Pax-1 binding sites,224,1798,2022
+M00327,Pax-3,Pax-3 binding sites,631,7668,8299
+M00328,Pax-8,Pax-8 binding sites,798,9418,10216
+M00329,Pax-9,zebrafish Pax-9 binding sites,507,5602,6109
+M00330,Major T-antigen,Major T-antigen binding sites,588,2559,3147
+M00331,Lentiviral TATA,Lentiviral TATA upstream element,453,3304,3757
+M00332,Whn,winged-helix factor nude,1627,10128,11755
+M00333,ZF5,ZF5 binding sites,705,9267,9972
+M00334,D-Type LTRs,poly A signal of D-type LTRs,1885,11577,13462
+M00338,ATF,ATF binding site,240,5942,6182
+M00339,c-Ets-1,c-ETS-1 binding site,662,3904,4566
+M00340,c-Ets-2,c-Ets-2 binding sites,637,4048,4685
+M00341,GABP,GA binding protein,460,5821,6281
+M00342,Oct-1,Octamer binding factor 1,1002,9262,10264
+M00345,GAmyb,GA-regulated myb gene from barley,1237,7154,8391
+M00346,GATA-1,GATA-binding factor 1,940,9421,10361
+M00347,GATA-1,GATA-binding factor 1,646,8805,9451
+M00348,GATA-2,GATA-binding factor 2,644,10691,11335
+M00349,GATA-2,GATA-binding factor 2,995,7528,8523
+M00350,GATA-3,GATA-binding factor 3,1080,11231,12311
+M00351,GATA-3,GATA-binding factor 3,1538,9794,11332
+M00356,bZIP910,bZIP transcription factor from Antirrhinum majus,132,2061,2193
+M00357,bZIP910,bZIP transcription factor from Antirrhinum majus,441,4279,4720
+M00358,bZIP911,bZIP transcription factor from Antirrhinum majus,119,1843,1962
+M00359,bZIP911,bZIP transcription factor from Antirrhinum majus,336,3062,3398
+M00360,Pax-3,Pax-3 binding sites,408,4124,4532
+M00368,CPRF-1,may be involved in light-induced gene expression,303,3946,4249
+M00370,CPRF-3,,176,4879,5055
+M00371,CPRF-2,constitutively expressed; light-induced nuclear import,147,4769,4916
+M00373,Pax-4,Pax-4 binding sites,691,8460,9151
+M00377,Pax-4,Pax-4 binding sites,1981,19079,21060
+M00378,Pax-4,Pax-4 binding sites,647,4972,5619
+M00380,Pax-4,Pax-4 binding sites,1058,7178,8236
+M00394,Msx-1,msh-like (muscle segment homeobox) homeobox protein 1,1436,13912,15348
+M00395,HOXA3,HOXA3 (homeobox cluster protein),1612,13584,15196
+M00396,En-1,engrailed 1,2372,15671,18043
+M00402,MEF-2,,2072,15641,17713
+M00403,aMEF-2,myocyte enhancer factor,721,12018,12739
+M00405,MEF-2,myocyte enhancer factor,973,12670,13643
+M00406,MEF-2,myocyte enhancer factor,445,8296,8741
+M00407,RSRFC4,,534,8833,9367
+M00410,SOX-9,SOX (SRY-related HMG box),1665,11034,12699
+M00411,HNF-4alpha1,Hepatocyte nuclear factor 4,446,4004,4450
+M00412,AREB6,AREB6 (Atp1a1 regulatory element binding factor 6),692,3724,4416
+M00413,AREB6,AREB6 (Atp1a1 regulatory element binding factor 6),866,5022,5888
+M00414,AREB6,AREB6 (Atp1a1 regulatory element binding factor 6),717,5621,6338
+M00415,AREB6,AREB6 (Atp1a1 regulatory element binding factor 6),1065,4440,5505
+M00416,Cart-1,Cart-1 (cartilage homeoprotein 1),1402,14546,15948
+M00418,TGIF,TGIF (5'TG3' interacting factor),1479,5240,6719
+M00419,MEIS1,Meis-1 (myeloid ecotropic viral integration site 1),1669,4750,6419
+M00420,MEIS1A/HOXA9,Meis-1a/HOXA9 heterodimeric binding,789,5870,6659
+M00421,MEIS1B/HOXA9,Meis-1b/HOXA9 heterodimeric binding,1021,6128,7149
+M00422,FOXJ2,fork head box J 2,836,15571,16407
+M00423,FOXJ2,fork head box J 2,1323,11174,12497
+M00424,NKX6-1,NKX6-1,2398,18200,20598
+M00425,E2F,E2F,710,10443,11153
+M00426,E2F,E2F,368,7134,7502
+M00427,E2F,E2F,196,7968,8164
+M00428,E2F-1,E2F-1,564,9904,10468
+M00430,E2F-1,E2F-1,845,9424,10269
+M00431,E2F-1,E2F-1,325,9664,9989
+M00432,TTF1,"TTF-1, TITF1 (thyroid transcription factor 1)",1033,3717,4750
+M00433,Hmx3,H6 homeobox 3,626,3815,4441
+M00436,IPF1,,2159,15368,17527
+M00437,CHX10,,1427,17810,19237
+M00444,VDR,"vitamin D receptor; mediates vitamin D3-signaling, often dimerizes with RXR-alpha",1014,4463,5477
+M00445,Xvent-1,Xenopus ventral 1,1086,6459,7545
+M00446,Spz1,spermatogenic Zip,610,5746,6356
+M00447,AR,androgen receptor,802,3579,4381
+M00448,Zic1,zinc finger protein of the cerebellum 1,623,6302,6925
+M00449,Zic2,zinc finger protein of the cerebellum 2,617,4911,5528
+M00450,Zic3,zinc finger protein of the cerebellum 3,600,4519,5119
+M00451,NKX3A,NK class homeobox factor 3A,1603,15420,17023
+M00453,IRF-7,interferon regulatory factor 7,1016,7222,8238
+M00454,MRF-2,modulator recognition factor 2,1101,6597,7698
+M00456,FAC1,fetal Alz-50 clone 1,895,6353,7248
+M00457,STAT5A (homodimer),signal transducer and activator of transcription 5a,390,2674,3064
+M00459,STAT5B (homodimer),signal transducer and activator of transcription 5b,408,2362,2770
+M00460,STAT5A (homotetramer),,717,3703,4420
+M00462,GATA-6,,1623,15688,17311
+M00463,POU3F2,,1011,8634,9645
+M00464,POU3F2,,1558,14865,16423
+M00465,POU6F1,,1708,16513,18221
+M00466,HIF-1,hypoxia-inducible factor 1,473,7984,8457
+M00467,Roaz,rat Olf-1/EBF-associated zinc finger protein,310,1272,1582
+M00468,AP-2rep,AP-2 repressor,1054,4287,5341
+M00469,AP-2alpha,,1053,7686,8739
+M00470,AP-2gamma,,1022,7249,8271
+M00471,TBP,TATA binding protein,2383,19178,21561
+M00472,FOXO4,fork head box O4,1052,10518,11570
+M00473,FOXO1,fork head box O1,977,10806,11783
+M00474,FOXO1,fork head box O1,685,9837,10522
+M00476,FOXO4,fork head box O4,558,9249,9807
+M00477,FOXO3,fork head box O3,630,11145,11775
+M00478,Cdc5,cell division control protein 5,1748,14021,15769
+M00479,Alfin1,,659,4918,5577
+M00480,LUN-1,,156,490,646
+M00481,AR,androgen receptor,582,2837,3419
+M00482,PITX2,pituitary homeobox factor 2,1186,7619,8805
+M00483,ATF6,activating transcription factor 6,604,5346,5950
+M00484,Ncx,,1469,15664,17133
+M00485,Nkx2-2,NK2 class homeobox factor 2,1206,6639,7845
+M00486,Pax-2,paired box factor 2,1082,7734,8816
+M00489,Nkx6-2,NK related homeobox factor 6-2,2385,24859,27244
+M00490,Bach2,BTB and CNC homolog 2,653,5211,5864
+M00491,MAZR,MAZ related factor,806,4814,5620
+M00492,STAT1,signal transducer and activator of transcription 1,816,5620,6436
+M00493,STAT5A,signal transducer and activator of transcription 5a,572,5338,5910
+M00494,STAT6,signal transducer and activator of transcription 6,678,7083,7761
+M00495,Bach1,BTB and CNC homolog 1,459,3408,3867
+M00496,STAT1,signal transducer and activator of transcription 1,590,5844,6434
+M00497,STAT3,signal transducer and activator of transcription 3,552,4618,5170
+M00498,STAT4,signal transducer and activator of transcription 4,732,5896,6628
+M00499,STAT5A,signal transducer and activator of transcription 5a,271,2440,2711
+M00500,STAT6,signal transducer and activator of transcription 6,308,1172,1480
+M00510,Lhx3,LIM homeobox transcription factor 3,2409,20554,22963
+M00511,ERR alpha,estrogen-related receptor alpha,966,4746,5712
+M00512,PPARG,PPAR-gamma (peroxisome proliferator-activated receptor gamma),102,1048,1150
+M00513,ATF3,activating transcription factor 3,392,4623,5015
+M00514,ATF4,activating transcription factor 4,535,6562,7097
+M00515,PPARG,PPAR-gamma (peroxisome proliferator-activated receptor gamma),164,686,850
+M00516,E2F,,279,8562,8841
+M00517,AP-1,,686,5328,6014
+M00518,PPARalpha/RXR-alpha,PPAR-alpha/RXR-alpha heterodimer (peroxisome proliferator activated factor alpha/retinoid X receptor alpha),755,4934,5689
+M00526,GCNF,GCNF (germ cell nuclear factor),244,1596,1840
+M00528,PPAR,PPAR (peroxisome proliferator-activated receptor gamma),701,3530,4231
+M00531,NERF1a,new ets-related factor 1a,609,3917,4526
+M00532,RP58,58 KDA repressor protein,980,3190,4170
+M00538,HTF,,493,7474,7967
+M00539,Arnt,AhR nuclear translocator homodimers,78,3030,3108
+M00615,c-Myc/Max,c-Myc/Max heterodimer,90,3255,3345
+M00616,AFP1,,1826,16689,18515
+M00619,Alx-4,,691,3050,3741
+M00621,C/EBPdelta,,1037,9030,10067
+M00622,C/EBPgamma,,1167,8545,9712
+M00623,Crx,,1630,11905,13535
+M00624,DBP,,994,3256,4250
+M00626,RFX1 (EF-C),,934,7563,8497
+M00630,FOXM1,,1229,5772,7001
+M00631,FXR,,860,6379,7239
+M00632,GATA-4,,766,4029,4795
+M00634,GCM,,789,4904,5693
+M00638,HNF-4alpha,,819,4423,5242
+M00639,HNF-6,,1739,14581,16320
+M00640,HOXA4,,1628,12626,14254
+M00641,HSF,,778,3080,3858
+M00644,LBP-1,,1529,7093,8622
+M00646,LF-A1,,1065,3329,4394
+M00647,LXR,,490,5641,6131
+M00648,MAF,,668,2828,3496
+M00649,MAZ,,1344,5885,7229
+M00650,MTF-1,,717,6331,7048
+M00651,NF-muE1,,720,5652,6372
+M00652,Nrf-1,,729,8073,8802
+M00655,PEA3,,878,4631,5509
+M00657,PTF1-beta,,757,3047,3804
+M00658,PU.1,,610,1935,2545
+M00665,Sp3,,574,4492,5066
+M00670,TCF-1(P),,1171,5743,6914
+M00671,TCF-4,,1673,6030,7703
+M00672,TEF,,1580,15289,16869
+M00678,Tel-2,,523,3714,4237
+M00684,XPF-1,,795,2953,3748
+M00687,alpha-CP1,,948,5746,6694
+M00690,AP-3,,1087,3959,5046
+M00691,ATF-1,,523,4610,5133
+M00693,E12,,715,7552,8267
+M00694,E4F1,,648,6392,7040
+M00695,ETF,,1465,9247,10712
+M00698,HEB,,1245,5599,6844
+M00699,ICSBP,,956,5860,6816
+M00701,SMAD-3,,1227,3204,4431
+M00704,TEF-1,,3886,5359,9245
+M00706,TFII-I,,791,3632,4423
+M00707,TFIIA,,780,4227,5007
+M00708,Vmw65,,2716,15630,18346
+M00711,Zta,,889,4149,5038
+M00712,myogenin,,919,6882,7801
+M00716,ZF5,,3828,11531,15359
+M00717,Pax-8,Pax-8 binding sites,648,10227,10875
+M00720,CAC-binding protein,,1153,4985,6138
+M00721,CACCC-binding factor,,645,4242,4887
+M00722,core-binding factor,,901,4978,5879
+M00724,HNF-3alpha,,1266,14198,15464
+M00725,HP1 site factor,,1165,7831,8996
+M00726,USF2,,685,7740,8425
+M00727,SF-1,,1143,3782,4925
+M00729,Cdx-2,,1853,14669,16522
+M00731,Osf2,,911,5167,6078
+M00733,SMAD-4,,860,4119,4979
+M00734,CIZ,CIZ (Cas-associated zinc finger protein),1922,4877,6799
+M00736,E2F-1/DP-1,E2F-1/DP-1 heterodimer,485,6388,6873
+M00737,E2F-1/DP-2,E2F-1/DP-2 heterodimer,308,6227,6535
+M00738,E2F-4/DP-1,E2F-4/DP-1 heterodimer,97,6508,6605
+M00739,E2F-4/DP-2,E2F-4/DP-2 heterodimer,193,6172,6365
+M00740,Rb/E2F-1/DP-1,Rb/E2F-1/DP-1 trimeric complex,130,6565,6695
+M00742,HFH-4,,640,8214,8854
+M00743,c-Ets-1 68,,661,4625,5286
+M00744,POU1F1,,2405,16913,19318
+M00745,LEF-1,,1470,5353,6823
+M00746,ELF-1,,741,3875,4616
+M00747,IRF1,,1414,5077,6491
+M00749,SREBP-1,,966,4380,5346
+M00750,HMG IY,,1595,6240,7835
+M00751,AML1,,1106,5712,6818
+M00761,p53 decamer,,704,3318,4022
+M00762,Direct repeat 1,,365,4504,4869
+M00763,PPAR direct repeat 1,,531,4434,4965
+M00764,HNF-4 direct repeat 1,,513,4215,4728
+M00765,COUP direct repeat 1,,445,4097,4542
+M00766,LXR direct repeat 4,,515,5061,5576
+M00767,FXR inverted repeat 1,,748,5022,5770
+M00769,AML,,773,5029,5802
+M00770,C/EBP,,847,8611,9458
+M00771,ETS,,607,4304,4911
+M00772,IRF,,1031,5634,6665
+M00773,MYB,,951,7514,8465
+M00774,NF-kappaB,,413,2616,3029
+M00775,NF-Y,,681,6783,7464
+M00776,SREBP,,609,4208,4817
+M00777,STAT,,726,2623,3349
+M00778,AhR,aryl hydrocarbon / dioxin receptor,613,7994,8607
+M00789,GATA,,1400,11633,13033
+M00790,HNF-1,,1271,17596,18867
+M00791,HNF-3,,859,13016,13875
+M00792,SMAD,,788,3527,4315
+M00793,YY1,,1086,4338,5424
+M00794,TTF-1,,736,3185,3921
+M00795,Octamer,,1445,15423,16868
+M00796,USF,,421,5700,6121
+M00797,HIF-1,hypoxia induced factor,400,7932,8332
+M00799,Myc,,576,6032,6608
+M00800,AP-2,,928,7924,8852
+M00801,CREB,,1323,6867,8190
+M00802,Pit-1,,1260,12390,13650
+M00803,E2F,,5765,10461,16226
+M00804,E2A,,710,6159,6869
+M00805,LEF1,,2596,6753,9349
+M00806,NF-1,,934,6113,7047
+M00807,EGR,,660,7607,8267
+M00808,Pax,,781,3152,3933
+M00809,FOX,,979,14572,15551
+M00810,SRF,,471,3382,3853

@@ -1,0 +1,71 @@
+/**
+ * Copyright (c) 2013 Institut de recherches cliniques de Montreal (IRCM)
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Affero General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU Affero General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
+div.layout_header {
+    width:785px;
+    height:60px;
+    position:relative;
+}
+div.layout_header img {
+    width:785px;
+    height:60px;
+    border-width:0;
+}
+
+ul.sf-menu
+{
+    width:70em;
+    height:2em;
+    background-color:#FFCC99;
+    border:0.1em solid black;
+    font-size:1em;
+    font-weight:bold;
+}
+.sf-menu ul {
+    border:0.1em solid black;
+}
+.sf-menu li {
+    background-color:#FFCC99;
+    color:inherit;
+}
+.sf-menu a {
+    padding:0.5em 1.4em;
+    text-decoration:none;
+    background-color:inherit;
+    color:#0000FF;
+}
+.sf-menu li:hover, .sf-menu li.sfHover,
+.sf-menu a:focus, .sf-menu a:hover, .sf-menu a:active {
+    background-color:#FFEECC;
+    color:#FF0000;
+}
+.sf-menu li.current {
+    background-color:#FFEECC;
+    color:#FF0000;
+}
+
+div.layout_content
+{
+    margin:2.5em 1em 2em 1em;
+    width:75em;
+}
+
+div.layout_footer
+{
+    text-align:center;
+    margin:1em;
+    width:75em;
+}

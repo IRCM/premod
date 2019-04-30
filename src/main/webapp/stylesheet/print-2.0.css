@@ -1,0 +1,52 @@
+/**
+ * Copyright (c) 2013 Institut de recherches cliniques de Montreal (IRCM)
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Affero General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU Affero General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
+body {margin-top:0; margin-left:0; background-color:#FFFFFF; color:#000000;}
+h1 {font-family:arial, sans-serif; font-size:11pt; font-weight:bold; text-align:center;}
+
+
+div.header {
+    display:none;
+}
+
+
+div.navbar
+{
+    display:none;
+}
+
+
+div.content
+{
+    padding-top:28px;
+    margin-left:15px;
+    margin-right:15px;
+    width:759px;
+    font-family:arial, sans-serif;
+    font-size:8pt;
+}
+
+
+div.footer {
+    text-align:center;
+    padding-top:8px;
+    margin-left:15px;
+    margin-right:15px;
+    margin-top:16px;
+    width:759px;
+    font-size:8pt;
+    clear:both;
+}

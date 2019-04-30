@@ -1,0 +1,114 @@
+/**
+ * Copyright (c) 2013 Institut de recherches cliniques de Montreal (IRCM)
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Affero General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU Affero General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
+html {font-size:75%;}
+body {
+    font-size:1em;
+    font-family:arial, sans-serif;
+    margin-top:0;
+    margin-left:0;
+    background-color:#FFFFFF;
+    color:#000000;
+}
+img {border-width:0px;}
+h1 {font-size:1.5em; font-weight:bold;}
+h2 {font-size:1.3em; font-weight:bold;}
+h3 {font-size:1.2em; font-weight:bold;}
+ul.messages li {color:#AD4EE4; background-color:inherit;}
+div.errors {color:#b72222; background-color:inherit; font-weight:bold;}
+ol.errors {color:#b72222; background-color:inherit;}
+span.error {color:#b72222; background-color:inherit;}
+
+
+table.result {
+    font-size:1em;
+    border-collapse:collapse;
+    border-style:solid;
+    border-color:#BBBBBB;
+    border-width:1px 0 1px 0;
+    text-align:left;
+}
+table.result caption, table.result th, table.result td {
+    padding:3px;
+}
+table.result caption {
+    background-color:#BBBBBB;
+    color:inherit;
+    border-color:#BBBBBB;
+    border-width:1px;
+    border-style:solid;
+    font-size:1.2em;
+    font-weight:bold;
+    margin-left:0;
+    text-align:left;
+    caption-side:top;
+}
+table.result thead tr th {
+    background-color:#DDDDDD;
+    color:inherit;
+    border-width:0 1px 0 1px;
+    border-style:solid;
+    border-color:#BBBBBB;
+}
+table.result thead tr.header th {
+    font-size:1.2em;
+    border-width:1px;
+    background-color:#BBBBBB;
+    color:inherit;
+}
+table.result tfoot tr td
+{
+    background-color:#DDDDDD;
+    color:inherit;
+    border-style:solid;
+    border-color:#BBBBBB;
+    border-width:1px;
+}
+table.result tbody tr th, table.result tbody tr td {
+    border-width:0 1px 0 1px;
+    border-style:solid;
+    border-color:#BBBBBB;
+}
+table.result tbody tr th {
+    background-color:#DDDDDD;
+    color:inherit;
+}
+table.result tbody tr.alt th {
+    background-color:#D0D0D0;
+    color:inherit;
+}
+table.result tbody tr td {
+    background-color:#FFFFFF;
+    color:inherit;
+}
+table.result tbody tr.alt td {
+    background-color:#E4E4E7;
+    color:inherit;
+}
+
+ul.other_views
+{
+    list-style-type:none;
+    font-size:1.2em;
+    font-weight:bold;
+    margin:1em 0;
+    padding:0;
+}
+ul.other_views li
+{
+    display:list-item;
+    margin:1em 0;
+}

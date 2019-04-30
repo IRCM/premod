@@ -1,0 +1,66 @@
+#
+# Copyright (c) 2013 Institut de recherches cliniques de Montreal (IRCM)
+#
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU Affero General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU Affero General Public License
+# along with this program.  If not, see <http://www.gnu.org/licenses/>.
+#
+
+main:
+  home: ${user.dir}/premod
+  serverUrl: http://localhost
+
+spring:
+  application:
+    name: premod
+# Database.
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost/premod_dev
+    username: test
+    password:
+    tomcat: 
+      test-on-borrow: true
+      validationQuery: SELECT 1
+
+# Web server.
+server:
+  session:
+    persistent: false
+
+# Health security.
+security:
+  basic:
+    path: /noUrlBecauseNoSecurityIsUsed
+  user:
+    name: admin
+
+logging:
+  file: ${spring.application.name}.log
+
+mail:
+  enabled: false
+  host: mailserver.example.com
+  from: christian.poitras@example.com
+  to: christian.poitras@example.com
+
+---
+spring:
+  profiles: test
+logging:
+  file: test.log
+mail:
+  enabled: true
+
+---
+spring:
+  profiles: integration-test

@@ -1,0 +1,345 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+    Copyright (c) 2013 Institut de recherches cliniques de Montreal (IRCM)
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU Affero General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU Affero General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+-->
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="ca.mcgill.genomequebec.premod.persistence.mapper.ModuleMapper">
+
+  <cache readOnly="true" />
+
+  <resultMap id="moduleResult" type="ca.mcgill.genomequebec.premod.business.Module">
+    <id property="id" column="module__id" />
+    <result property="name" column="module__name" />
+    <result property="version" column="module__version_id" />
+    <result property="type" column="module__type" />
+    <result property="chromosome" column="module__chromosome" />
+    <result property="start" column="module__start" />
+    <result property="end" column="module__end" />
+    <result property="length" column="module__length" />
+    <result property="assembly" column="module__assembly" />
+    <result property="score" column="module__score" />
+    <result property="rawScore" column="module__raw_score" />
+    <result property="gcContent" column="module__gc_content" />
+    <result property="downstreamGenePosition" column="module__downstream_gene" />
+    <result property="downstreamGeneLocus" column="module__downstream_gene_locus" />
+    <result property="downstreamGeneName" column="module__downstream_gene_name" />
+    <result property="upstreamGenePosition" column="module__upstream_gene" />
+    <result property="upstreamGeneLocus" column="module__upstream_gene_locus" />
+    <result property="upstreamGeneName" column="module__upstream_gene_name" />
+    <result property="cpgIsland" column="module__cpg_island" />
+    <result property="trrdModule" column="module__trrd_module" />
+    <result property="organism" column="module__organism" />
+  </resultMap>
+  <resultMap id="SelectForSearch"
+    type="ca.mcgill.genomequebec.premod.persistence.mapper.ModuleMapper$ModuleWithBestUnits">
+    <id property="id" column="module__id" />
+    <association property="module" javaType="ca.mcgill.genomequebec.premod.business.Module">
+      <id property="id" column="module__id" />
+      <result property="name" column="module__name" />
+      <result property="chromosome" column="module__chromosome" />
+      <result property="start" column="module__start" />
+      <result property="end" column="module__end" />
+      <result property="length" column="module__length" />
+      <result property="score" column="module__score" />
+      <result property="downstreamGenePosition" column="module__downstream_gene" />
+      <result property="downstreamGeneLocus" column="module__downstream_gene_locus" />
+      <result property="downstreamGeneName" column="module__downstream_gene_name" />
+      <result property="upstreamGenePosition" column="module__upstream_gene" />
+      <result property="upstreamGeneLocus" column="module__upstream_gene_locus" />
+      <result property="upstreamGeneName" column="module__upstream_gene_name" />
+      <result property="organism" column="module__organism" />
+      <result property="version" column="module__version_id" />
+    </association>
+    <collection property="bestUnits" ofType="ca.mcgill.genomequebec.premod.business.Unit">
+      <id property="id" column="unit__id" />
+      <result property="name" column="unit__name" />
+    </collection>
+  </resultMap>
+  <resultMap id="SelectForSearchLowRam"
+    type="ca.mcgill.genomequebec.premod.persistence.mapper.ModuleMapper$ModuleWithUnit">
+    <id property="id" column="module__id" />
+    <result property="module.id" column="module__id" />
+    <result property="module.name" column="module__name" />
+    <result property="module.chromosome" column="module__chromosome" />
+    <result property="module.start" column="module__start" />
+    <result property="module.end" column="module__end" />
+    <result property="module.length" column="module__length" />
+    <result property="module.score" column="module__score" />
+    <result property="module.downstreamGenePosition" column="module__downstream_gene" />
+    <result property="module.downstreamGeneLocus" column="module__downstream_gene_locus" />
+    <result property="module.downstreamGeneName" column="module__downstream_gene_name" />
+    <result property="module.upstreamGenePosition" column="module__upstream_gene" />
+    <result property="module.upstreamGeneLocus" column="module__upstream_gene_locus" />
+    <result property="module.upstreamGeneName" column="module__upstream_gene_name" />
+    <result property="module.organism" column="module__organism" />
+    <result property="module.version" column="module__version_id" />
+    <result property="unit.id" column="unit__id" />
+    <result property="unit.name" column="unit__name" />
+  </resultMap>
+  <resultMap id="ModuleWithSequence"
+    type="ca.mcgill.genomequebec.premod.persistence.mapper.ModuleMapper$ModuleWithSequence"
+    extends="moduleResult">
+    <result property="sequence" column="sequence__sequence" />
+  </resultMap>
+
+
+  <sql id="columns">
+    module.id AS module__id,
+    module.name AS module__name,
+    module.organism AS module__organism,
+    module.version_id AS module__version_id,
+    module.type AS module__type,
+    module.chromosome AS module__chromosome,
+    module.start AS module__start,
+    module.end AS module__end,
+    module.length AS module__length,
+    module.assembly AS module__assembly,
+    module.score AS module__score,
+    module.raw_score AS module__raw_score,
+    module.gc_content AS module__gc_content,
+    module.downstream_gene AS module__downstream_gene,
+    module.downstream_gene_locus AS module__downstream_gene_locus,
+    module.downstream_gene_name AS module__downstream_gene_name,
+    module.upstream_gene AS module__upstream_gene,
+    module.upstream_gene_locus AS module__upstream_gene_locus,
+    module.upstream_gene_name AS module__upstream_gene_name,
+    module.cpg_island AS module__cpg_island,
+    module.trrd_module AS module__trrd_module
+  </sql>
+
+
+  <select id="selectModuleById" resultMap="moduleResult"
+    parameterType="long">
+    SELECT
+    <include refid="columns" />
+    FROM module
+    WHERE id = #{value}
+  </select>
+  <select id="selectSequence" resultType="string" parameterType="ca.mcgill.genomequebec.premod.business.Module">
+    SELECT sequence
+    FROM sequence
+    WHERE module_id = #{id}
+  </select>
+  <select id="selectByNameAndOrganism" resultMap="moduleResult"
+    parameterType="map">
+    SELECT
+    <include refid="columns" />
+    FROM module
+    WHERE module.organism = #{organism}
+    AND module.name = #{name}
+  </select>
+  <select id="existsByNameAndOrganism" resultType="boolean"
+    parameterType="map">
+    SELECT IF(COUNT(module.name) > 0, 1, 0)
+    FROM module
+    WHERE module.organism = #{organism}
+    AND module.name = #{name}
+  </select>
+  <select id="selectModuleByIndex" resultMap="moduleResult"
+    parameterType="map">
+    SELECT
+    <include refid="columns" />
+    FROM module
+    WHERE organism = #{organism}
+    AND version_id = #{version}
+    LIMIT ${index}, 1
+  </select>
+  <select id="selectInWindow" resultMap="moduleResult"
+    parameterType="map">
+    SELECT
+    <include refid="columns" />
+    FROM module
+    WHERE organism = #{organism}
+    AND version_id = #{version}
+    AND chromosome = #{chromosomeLocation.chromosome}
+    AND end &gt;= #{chromosomeLocation.start}
+    AND start &lt;= #{chromosomeLocation.end}
+  </select>
+  <update id="createTemporaryTable" flushCache="false">
+    CREATE TEMPORARY TABLE _modules (
+    id BIGINT UNSIGNED NOT NULL,
+    inLimit TINYINT NOT NULL DEFAULT 0,
+    PRIMARY KEY (id)
+    )
+  </update>
+  <update id="dropTemporaryTable" flushCache="false">
+    DROP TEMPORARY TABLE _modules
+  </update>
+  <update id="createLimitTemporaryTable" flushCache="false">
+    CREATE TEMPORARY TABLE _modules_limit (
+    id BIGINT UNSIGNED NOT NULL,
+    PRIMARY KEY (id)
+    )
+  </update>
+  <update id="dropLimitTemporaryTable" flushCache="false">
+    DROP TEMPORARY TABLE _modules_limit
+  </update>
+  <sql id="direction">
+    <if test="descending">
+      DESC
+    </if>
+  </sql>
+  <update id="insertLimitTemporaryTable" flushCache="false">
+    INSERT INTO _modules_limit (id)
+    SELECT module.id
+    FROM module
+    JOIN _modules ON module.id = _modules.id
+    <if test="sort != null">
+      <if test="sort.toString() eq 'NAME'">
+        ORDER BY module.name
+        <include refid="direction" />
+      </if>
+      <if test="sort.toString() eq 'POSITION'">
+        ORDER BY module.chromosome
+        <include refid="direction" />
+        , module.start
+        <include refid="direction" />
+      </if>
+      <if test="sort.toString() eq 'SCORE'">
+        ORDER BY module.score
+        <include refid="direction" />
+      </if>
+    </if>
+    <if test="limit != null">
+      LIMIT #{limit.offset}, #{limit.rowCount}
+    </if>
+  </update>
+  <update id="updateLimitInTemporaryTable" flushCache="false">
+    UPDATE _modules
+    JOIN _modules_limit ON _modules.id = _modules_limit.id
+    SET _modules.inLimit = 1
+  </update>
+  <update id="resetLimitInTemporaryTable" flushCache="false">
+    UPDATE _modules
+    SET _modules.inLimit = 0
+  </update>
+  <update id="deleteLimitTemporaryTable" flushCache="false">
+    DELETE FROM _modules_limit
+  </update>
+  <select id="countForSearch" resultType="int" useCache="false">
+    SELECT COUNT(_modules.id)
+    FROM _modules
+  </select>
+  <select id="selectForSearch" resultMap="SelectForSearch"
+    useCache="false">
+    SELECT
+    <include refid="columns" />
+    ,
+    <include
+      refid="ca.mcgill.genomequebec.premod.persistence.mapper.UnitMapper.columns" />
+    FROM module
+    INNER JOIN _modules
+    ON module.id = _modules.id
+    AND _modules.inLimit = 1
+    LEFT JOIN module_to_unit
+    ON module_to_unit.module_id = module.id
+    AND module_to_unit.tag_number IS NOT NULL
+    LEFT JOIN unit
+    ON module_to_unit.unit_id = unit.id
+    <if test="sort != null">
+      <if test="sort.toString() eq 'NAME'">
+        ORDER BY module.name
+        <include refid="direction" />
+        ,
+        module.id,
+        module_to_unit.tag_number
+      </if>
+      <if test="sort.toString() eq 'POSITION'">
+        ORDER BY module.chromosome
+        <include refid="direction" />
+        ,
+        module.start
+        <include refid="direction" />
+        ,
+        module.id,
+        module_to_unit.tag_number
+      </if>
+      <if test="sort.toString() eq 'SCORE'">
+        ORDER BY module.score
+        <include refid="direction" />
+        ,
+        module.id,
+        module_to_unit.tag_number
+      </if>
+    </if>
+  </select>
+  <select id="selectForSearchLowRam" resultMap="SelectForSearchLowRam"
+    useCache="false" fetchSize="-2147483648" resultSetType="FORWARD_ONLY">
+    SELECT
+    <include refid="columns" />
+    ,
+    <include
+      refid="ca.mcgill.genomequebec.premod.persistence.mapper.UnitMapper.columns" />
+    FROM module
+    INNER JOIN _modules
+    ON module.id = _modules.id
+    AND _modules.inLimit = 1
+    LEFT JOIN module_to_unit
+    ON module_to_unit.module_id = module.id
+    AND module_to_unit.tag_number IS NOT NULL
+    LEFT JOIN unit
+    ON module_to_unit.unit_id = unit.id
+    <if test="sort != null">
+      <if test="sort.toString() eq 'NAME'">
+        ORDER BY module.name
+        <include refid="direction" />
+        ,
+        module.id,
+        module_to_unit.tag_number
+      </if>
+      <if test="sort.toString() eq 'POSITION'">
+        ORDER BY module.chromosome
+        <include refid="direction" />
+        ,
+        module.start
+        <include refid="direction" />
+        ,
+        module.id,
+        module_to_unit.tag_number
+      </if>
+      <if test="sort.toString() eq 'SCORE'">
+        ORDER BY module.score
+        <include refid="direction" />
+        ,
+        module.id,
+        module_to_unit.tag_number
+      </if>
+    </if>
+  </select>
+
+  <select id="selectAll" resultMap="moduleResult" useCache="false"
+    fetchSize="-2147483648" resultSetType="FORWARD_ONLY">
+    SELECT
+    <include refid="columns" />
+    FROM module
+    ORDER BY module.name
+  </select>
+  <select id="selectAllWithSequence" resultMap="ModuleWithSequence"
+    useCache="false" fetchSize="-2147483648" resultSetType="FORWARD_ONLY">
+    SELECT
+    <include refid="columns" />
+    ,
+    sequence.sequence AS sequence__sequence
+    FROM module
+    JOIN sequence ON sequence.module_id = module.id
+    ORDER BY module.name
+  </select>
+</mapper>

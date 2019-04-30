@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!--
+
+    Copyright (c) 2013 Institut de recherches cliniques de Montreal (IRCM)
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU Affero General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU Affero General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+-->
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper
+  namespace="ca.mcgill.genomequebec.premod.persistence.mapper.UnitOccurrenceMapper">
+
+  <cache readOnly="true" />
+
+  <resultMap id="UnitOccurrenceBase" type="ca.mcgill.genomequebec.premod.business.UnitOccurrence">
+    <result property="organism" column="unit_occurrence__organism" />
+    <result property="version" column="unit_occurrence__version_id" />
+    <result property="chromosome" column="unit_occurrence__chromosome" />
+    <result property="start" column="unit_occurrence__start" />
+    <result property="end" column="unit_occurrence__end" />
+    <result property="strand" column="unit_occurrence__strand" />
+    <result property="assembly" column="unit_occurrence__assembly" />
+    <result property="occScore" column="unit_occurrence__occ_score" />
+    <result property="totalScore" column="unit_occurrence__total_score" />
+    <result property="tagNumber" column="unit_occurrence__tag_number" />
+  </resultMap>
+  <resultMap id="unitOccurrenceResult" type="ca.mcgill.genomequebec.premod.business.UnitOccurrence"
+    extends="UnitOccurrenceBase">
+    <association property="unit" column="unit_occurrence__unit_id"
+      select="ca.mcgill.genomequebec.premod.persistence.mapper.UnitMapper.getUnitById" />
+    <association property="module" column="unit_occurrence__module_id"
+      select="ca.mcgill.genomequebec.premod.persistence.mapper.ModuleMapper.selectModuleById" />
+  </resultMap>
+  <resultMap id="UnitOccurrenceForModule" type="ca.mcgill.genomequebec.premod.business.UnitOccurrence"
+    extends="UnitOccurrenceBase">
+    <result property="unit.id" column="unit__id" />
+    <result property="unit.type" column="unit__type" />
+    <result property="unit.name" column="unit__name" />
+    <result property="unit.description" column="unit__description" />
+    <result property="unit.length" column="unit__length" />
+  </resultMap>
+  <resultMap id="UnitOccurrenceForExport" type="ca.mcgill.genomequebec.premod.business.UnitOccurrence"
+    extends="UnitOccurrenceBase">
+    <result property="unit.id" column="unit_occurrence__unit_id" />
+    <result property="module.id" column="unit_occurrence__module_id" />
+    <result property="module.name" column="module__name" />
+  </resultMap>
+
+
+  <sql id="columns">
+    unit_occurrence.unit_id AS unit_occurrence__unit_id,
+    unit_occurrence.organism AS unit_occurrence__organism,
+    unit_occurrence.version_id AS unit_occurrence__version_id,
+    unit_occurrence.chromosome AS unit_occurrence__chromosome,
+    unit_occurrence.start AS unit_occurrence__start,
+    unit_occurrence.end AS unit_occurrence__end,
+    unit_occurrence.strand AS unit_occurrence__strand,
+    unit_occurrence.assembly AS unit_occurrence__assembly,
+    unit_occurrence.occ_score AS unit_occurrence__occ_score,
+    unit_occurrence.total_score AS unit_occurrence__total_score,
+    unit_occurrence.module_id AS unit_occurrence__module_id,
+    unit_occurrence.tag_number AS unit_occurrence__tag_number
+  </sql>
+
+
+  <select id="selectByModuleAndUnit" resultMap="unitOccurrenceResult"
+    parameterType="map">
+    SELECT
+    <include refid="columns" />
+    FROM unit_occurrence
+    WHERE unit_id = #{unit.id}
+    AND module_id = #{module.id}
+  </select>
+  <select id="selectByModule" resultMap="UnitOccurrenceForModule"
+    parameterType="ca.mcgill.genomequebec.premod.business.Module">
+    SELECT
+    <include refid="columns" />
+    ,
+    <include
+      refid="ca.mcgill.genomequebec.premod.persistence.mapper.UnitMapper.columns" />
+    FROM unit_occurrence
+    JOIN unit ON unit_occurrence.unit_id = unit.id
+    WHERE unit_occurrence.module_id = #{id}
+  </select>
+
+  <select id="selectAll" resultMap="UnitOccurrenceForExport"
+    useCache="false" fetchSize="-2147483648" resultSetType="FORWARD_ONLY">
+    SELECT
+    <include refid="columns" />
+    ,
+    module.name AS module__name
+    FROM unit_occurrence
+    JOIN module ON unit_occurrence.module_id = module.id
+    ORDER BY unit_occurrence.unit_id, unit_occurrence.organism,
+    unit_occurrence.version_id, unit_occurrence.chromosome,
+    unit_occurrence.start, unit_occurrence.strand
+  </select>
+</mapper>

@@ -1,0 +1,118 @@
+/**
+ * Copyright (c) 2013 Institut de recherches cliniques de Montreal (IRCM)
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Affero General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU Affero General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
+table.result
+{
+    border-collapse:collapse;
+    font-family:arial, sans-serif;
+    font-size:8pt;
+    border-style:solid;
+    border-color:#BBBBBB;
+    border-width:1px 0 1px 0;
+    table-layout:auto;
+}
+table.result caption
+{
+    background-color:#BBBBBB;
+    color:inherit;
+    border-color:#BBBBBB;
+    border-width:1px;
+    border-style:solid;
+    font-size:10pt;
+    font-weight:bold;
+    text-align:left;
+    padding:3px;
+    margin-left:0;
+    caption-side:top;
+}
+table.result caption ul
+{
+    list-style-type:none;
+    list-style-position:inside;
+    display:inline;
+    padding:0;
+    margin:0;
+    text-align:right;
+}
+table.result caption ul li
+{
+    display:inline;
+    padding:0;
+}
+table.result thead tr th
+{
+    background-color:#DDDDDD;
+    border-width:0 1px 0 1px;
+    border-style:solid;
+    border-color:#BBBBBB;
+    text-align:left;
+    padding:3px;
+}
+table.result thead tr.second th
+{
+    border-top-width:1px;
+}
+table.result thead tr.header th
+{
+    font-size:10pt;
+    border-width:1px;
+    background-color:#BBBBBB;
+}
+table.result tfoot tr td
+{
+    background-color:#DDDDDD;
+    border-style:solid;
+    border-color:#BBBBBB;
+    border-width:1px;
+    padding:3px;
+}
+table.result tfoot tr td input
+{
+    margin:0 2px 0 2px;
+}
+table.result tbody tr th
+{
+    background-color:#DDDDDD;
+    border-width:0 1px 0 1px;
+    border-style:solid;
+    border-color:#BBBBBB;
+    text-align:left;
+    padding:3px;
+}
+table.result tbody tr.alt th
+{
+    background-color:#D0D0D0;
+}
+table.result tbody tr td
+{
+    background-color:#FFFFFF;
+    border-width:0 1px 0 1px;
+    border-style:solid;
+    border-color:#BBBBBB;
+    padding:3px;
+}
+table.result tbody tr.alt td
+{
+    background-color:#E4E4E7;
+}
+table.result tbody tr.even td
+{
+    background-color:#FFFFFF;
+}
+table.result tbody tr.odd td
+{
+    background-color:#E4E4E7;
+}

@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+    Copyright (c) 2013 Institut de recherches cliniques de Montreal (IRCM)
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU Affero General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU Affero General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+-->
+<taglib xmlns="http://java.sun.com/xml/ns/j2ee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee
+        http://java.sun.com/xml/ns/j2ee/web-jsptaglibrary_2_0.xsd"
+    version="2.0">
+
+<tlib-version>1.2</tlib-version>
+<short-name>PReMod_Stripes_extensions</short-name>
+<uri>http://genomequebec.mcgill.ca/PReMod/tld/stripes-ext</uri>
+    <tag>
+        <description><![CDATA[
+            <p>Generates &lt;input type=&quot;radio&quot; value=&quot;foo&quot;/&gt; HTML tags
+            based on the attribute set on the tag and the state of the form. Since a single radio
+            button widget on a HTML page can have only a single value, the value tag attribute must
+            be a Scalar object.  The value will be converted to a String using the Stripes
+            formatting system (with appropriate defaults), or by calling toString if an appropriate
+            Formatter does not exist. Similarly since radio button sets can have only a single
+            selected value at a time the checked attribute of the tag must also be a scalar value.</p>
+
+            <p>Radio buttons perform automatic (re-)population of state.  They prefer, in order, the value
+            in the HttpServletRequest, the value in the ActionBean and lastly the value set using
+            checked="" on the page.  If the value of the current radio button matches the checked value
+            from the preferred source then the attribute checked="checked" will be written in the HTML
+            tag.</p>
+
+            <p>The tag may include a body and if present the body is converted to a String and overrides the
+            <b>checked</b> tag attribute.</p>
+        ]]></description>
+        <display-name>radio</display-name>
+        <name>radio</name>
+        <tag-class>ca.mcgill.genomequebec.premod.web.ext.tag.CheckNullInputRadioButtonTag</tag-class>
+        <body-content>JSP</body-content>
+
+        <attribute>
+            <description>
+                When the form is first rendered, if this attribute is present then checked=checked
+                will be written to the HTML tag to select it by default.
+            </description>
+            <name>checked</name><required>false</required><rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute><description>The type used to format the object. If the value is a date, valid values are 'date', 'time' and 'datetime'. If the value is a Number, valid values are 'number', 'percentage' and 'currency'.</description><name>formatType</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+        <attribute><description>The pattern to apply. Can be either a named pattern or an actual pattern as understood by java.text.DateFormat or java.text.NumberFormat as appropriate for the type of object being formatted.</description><name>formatPattern</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+
+        <!-- Start: Standard Form Input attributes -->
+        <attribute>
+            <description>A default value for the form field. Can be a literal value, or an EL expression.</description>
+            <name>value</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+            <type>java.lang.Object</type>
+        </attribute>
+        <attribute><description>The name of the form field.</description><name>name</name><required>true</required><rtexprvalue>true</rtexprvalue></attribute>
+        <attribute><description>The size of the form field. (HTML Pass-through)</description><name>size</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+        <attribute><description>Disables the input element when it first loads so that the user can not write text in it, or select it. (HTML Pass-through)</description><name>disabled</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+        <!-- End: Standard Form Input   attributes -->
+
+
+        <!-- Start: Standard HTML attributes -->
+        <attribute><description>Keyboard shortcut to access the element. (HTML Pass-through)</description><name>accesskey</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+        <attribute><description>The CSS class to be applied to the element. (HTML Pass-through)</description><name>class</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+        <attribute><description>Text direction. (HTML Pass-through)</description><name>dir</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+        <attribute><description>A unique identifier for the HTML tag on the pgae. (HTML Pass-through)</description><name>id</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+        <attribute><description>The language code of the element. (HTML Pass-through)</description><name>lang</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+        <attribute><description>Scripting code run when the element loses focus. (HTML Pass-through)</description><name>onblur</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+        <attribute><description>Scripting code run when the element changes. (HTML Pass-through)</description><name>onchange</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+        <attribute><description>Scripting code run on each mouse click. (HTML Pass-through)</description><name>onclick</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+        <attribute><description>Scripting code run on a double-click of the mouse. (HTML Pass-through)</description><name>ondblclick</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+        <attribute><description>Scripting code run when the element acquires focus. (HTML Pass-through)</description><name>onfocus</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+        <attribute><description>Scripting code run when a key is depressed. (HTML Pass-through)</description><name>onkeydown</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+        <attribute><description>Scripting code run when a key is pressed and released. (HTML Pass-through)</description><name>onkeypress</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+        <attribute><description>Scripting code run when a key is released. (HTML Pass-through)</description><name>onkeyup</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+        <attribute><description>Scripting code run when a mouse button is depressed. (HTML Pass-through)</description><name>onmousedown</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+        <attribute><description>Scripting code run when the mouse pointer is moved. (HTML Pass-through)</description><name>onmousemove</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+        <attribute><description>Scripting code run when the mouse pointer moves out of the element. (HTML Pass-through)</description><name>onmouseout</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+        <attribute><description>Scripting code run when the mouse pointer moves over the element. (HTML Pass-through)</description><name>onmouseover</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+        <attribute><description>Scripting code run when a mouse button is released. (HTML Pass-through)</description><name>onmouseup</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+        <attribute><description>Scripting code run when an element is selected. (HTML Pass-through)</description><name>onselect</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+        <attribute><description>Inline CSS style fragment that applies to the element (HTML Pass-through)</description><name>style</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+        <attribute><description>The tab order of the element. (HTML Pass-through)</description><name>tabindex</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+        <attribute><description>Tool-tip text for the element. (HTML Pass-through)</description><name>title</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+        <!-- End: Standard HTML attributes -->
+        <dynamic-attributes>false</dynamic-attributes>
+    </tag>
+</taglib>

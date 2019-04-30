@@ -1,0 +1,647 @@
+/**
+ * Copyright (c) 2013 Institut de recherches cliniques de Montreal (IRCM)
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Affero General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU Affero General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
+body {margin-top:0; margin-left:0; background-color:#FFFFFF; color:#000000;}
+a:link {color: #0A50A1; text-decoration:none; background-color:inherit;}
+a:visited {color: #0A50A1; text-decoration:none; background-color:inherit;}
+a:hover {color: #FF7F00; text-decoration:none; background-color:inherit;}
+img {border-width:0;}
+input {font-family:arial, sans-serif; font-size:8pt}
+input.Footer {font-family:arial, sans-serif; font-size:8pt; margin:0 1px 0 1px;}
+p {text-indent: 30px}
+h1 {font-family:arial, sans-serif; font-size:11pt; font-weight:bold; text-align:center;}
+h2 {font-family:arial, sans-serif; font-size:9pt; font-weight:bold; text-align:center;}
+h3 {font-family:arial, sans-serif; font-size:8pt; font-weight:bold; text-align:center;}
+
+
+
+DIV#Header
+{
+    width:789px;
+    display:block;
+}
+IMG.MainImage
+{
+    width:789px;
+    height:100px;
+    border-width:0;
+}
+
+
+
+DIV.MainNavBar
+{
+    font-family:arial, sans-serif;
+    font-size:8pt;
+    background-color:inherit;
+    color:inherit;
+    font-weight:bold;
+    display:block;
+    width:789px;
+}
+UL.MainNavBar
+{
+    list-style-type:none;
+    list-style-position:inside;
+    background-color:#AAAAAA;
+    color:inherit;
+    padding:0;
+    margin:0;
+    text-align:center;
+    padding-top:1px;
+    padding-bottom:1px;
+    width:789px;
+}
+LI.MainNavBar
+{
+    display:inline;
+    background-color:#AAAAAA;
+    color:#FFFFFF;
+    padding-left:10px;
+    padding-right:10px;
+    padding-top:1px;
+    padding-bottom:1px;
+}
+LI.MainNavBarCurrent
+{
+    display:inline;
+    background-color:#DDDDDD;
+    color: #000000;
+    padding-left:10px;
+    padding-right:10px;
+    padding-top:1px;
+    padding-bottom:1px;
+}
+a.MainNavBar:link {font-size:8pt; font-weight:bold; color:#FFFFFF; text-decoration:none; background-color:inherit;}
+a.MainNavBar:visited {font-size:8pt; font-weight:bold; color:#FFFFFF; text-decoration:none; background-color:inherit;}
+a.MainNavBar:hover {font-size:8pt; font-weight:bold; color:#FFFFFF; text-decoration:none; background-color:inherit;}
+a.MainNavBarCurrent:link {font-size:8pt; font-weight:bold; color:#000000; text-decoration:none; background-color:inherit;}
+a.MainNavBarCurrent:visited {font-size:8pt; font-weight:bold; color:#000000; text-decoration:none; background-color:inherit;}
+a.MainNavBarCurrent:hover {font-size:8pt; font-weight:bold; color:#000000; text-decoration:none; background-color:inherit;}
+
+
+
+DIV#Content
+{
+    text-align:center;
+    padding-top:8px;
+    margin-left:15px;
+    margin-right:15px;
+    width:759px;
+    font-family:arial, sans-serif;
+    font-size:8pt;
+}
+
+
+
+DIV#Footer
+{
+    text-align:center;
+    padding-top:8px;
+    margin-left:15px;
+    margin-right:15px;
+    margin-top:16px;
+    width:759px;
+    font-size:8pt;
+    clear:both;
+}
+
+
+
+TABLE.Result
+{
+    border-collapse:collapse;
+    font-family:arial, sans-serif;
+    font-size:8pt;
+    border-style:solid;
+    border-color:#AAAAAA;
+    border-width:1px 0 1px 0;
+    table-layout:auto;
+    margin:auto;
+}
+TR.Result
+{
+}
+TD.Result
+{
+}
+TABLE.ResultHeader
+{
+    border-collapse:collapse;
+    table-layout:auto;
+    font-size:10pt;
+    font-weight:bold;
+    width:100%;
+    border-width:0 1px 0 1px;
+    border-color:#AAAAAA;
+    border-style:solid;
+    text-align:left;
+}
+TR.ResultHeader
+{
+    background-color:#AAAAAA;
+    color:inherit;
+}
+TD.ResultHeader
+{
+    border-color:#AAAAAA;
+    border-width:0;
+    border-style:solid;
+}
+TABLE.ResultBody
+{
+    border-collapse:collapse;
+    table-layout:auto;
+    font-size:8pt;
+    width:100%;
+}
+TR.ResultColumnTitle
+{
+    background-color:#E4E4E7;
+    color:inherit;
+}
+TD.ResultColumnTitle
+{
+    font-weight:bold;
+    border-style:solid;
+    border-width:0 1px 0 1px;
+    border-color:#AAAAAA;
+}
+TR.ResultBody
+{
+    background-color:inherit;
+    color:inherit;
+}
+TD.ResultBody
+{
+    background-color:#FFFFFF;
+    color:inherit;
+    border-width:0;
+    border-color:#AAAAAA;
+    border-style:solid;
+}
+TD.ResultBody1
+{
+    background-color:#FFFFFF;
+    color:inherit;
+    border-width:0 1px 0 1px;
+    border-color:#AAAAAA;
+    border-style:solid;
+    text-align:left;
+}
+TD.ResultBody2
+{
+    background-color:#F5F5F8;
+    color:inherit;
+    border-width:0 1px 0 1px;
+    border-color:#AAAAAA;
+    border-style:solid;
+    text-align:left;
+}
+TABLE.ResultFooter
+{
+    border-collapse:collapse;
+    table-layout:auto;
+    font-size:8pt;
+    width:100%;
+    border-width:0 1px 0 1px;
+    border-color:#AAAAAA;
+    border-style:solid;
+}
+TR.ResultFooter
+{
+    background-color:#E4E4E7;
+    color:inherit;
+}
+TD.ResultFooter
+{
+    border-width:0;
+    border-color:#AAAAAA;
+    border-style:solid;
+    text-align:left;
+}
+TD.ResultHeaderNavBar
+{
+    border-color:#AAAAAA;
+    border-width:0;
+    border-style:solid;
+    padding-left:8px;
+    text-align:right;
+}
+UL.ResultHeaderNavBar
+{
+    font-size:10pt;
+    font-weight:bold;
+    list-style-type:none;
+    list-style-position:inside;
+    display:inline;
+    background-color:#AAAAAA;
+    color:inherit;
+    padding:0;
+    margin:0;
+    text-align:right;
+}
+LI.ResultHeaderNavBar
+{
+    font-size:10pt;
+    font-weight:bold;
+    display:inline;
+    background-color:#AAAAAA;
+    color:inherit;
+    padding-left:0;
+    padding-right:0;
+    padding-top:0;
+    padding-bottom:0;
+}
+a.ResultHeaderNavBar:link {font-size:10pt; font-weight:bold; color:#000000; text-decoration: underline; background-color:inherit;}
+a.ResultHeaderNavBar:visited {font-size:10pt; font-weight:bold; color:#000000; text-decoration: underline; background-color:inherit;}
+a.ResultHeaderNavBar:hover {font-size:10pt; font-weight:bold; color:#000000; text-decoration: underline; background-color:inherit;}
+
+
+
+TABLE.Search
+{
+    border-collapse:collapse;
+    border-style:solid;
+    border-color:#AAAAAA;
+    border-width:1px;
+    font-family:arial, sans-serif;
+    font-size:8pt;
+    table-layout:auto;
+    margin:auto;
+}
+TR.Search
+{
+}
+TD.Search
+{
+}
+TABLE.SearchHeader
+{
+    border-collapse:collapse;
+    table-layout:auto;
+    font-size:10pt;
+    font-weight:bold;
+    border-width:0;
+    width:100%;
+    text-align:left;
+}
+TR.SearchHeader
+{
+    color: inherit;
+    background-color:#AAAAAA;
+}
+TD.SearchHeader
+{
+    border-width:0;
+    border-color:#AAAAAA;
+    border-style:solid;
+}
+TABLE.SearchBody
+{
+    border-collapse:collapse;
+    table-layout:auto;
+    border-width:0;
+    font-size:8pt;
+    width:100%;
+}
+TR.SearchSectionTitle
+{
+    font-size:8pt;
+    font-weight:bold;
+    background-color:#FFCC99;
+    color:inherit;
+}
+TD.SearchSectionTitle
+{
+    border-width:0;
+    border-color:#AAAAAA;
+    border-style:solid;
+    text-align:left;
+}
+TR.SearchColumnTitle
+{
+    font-size:8pt;
+    font-weight:bold;
+    background-color:#FFCC99;
+    color:inherit;
+}
+TD.SearchColumnTitle
+{
+    border-width:0;
+    border-color:#AAAAAA;
+    border-style:solid;
+    padding-left:8px;
+}
+TR.SearchBody
+{
+    background-color:#FFCC99;
+    color:inherit;
+}
+TD.SearchBody
+{
+    border-width:0;
+    border-color:#AAAAAA;
+    border-style:solid;
+    padding-left:8px;
+    text-align:left;
+}
+TR.SearchSpaceline
+{
+    background-color:#FFCC99;
+    color:inherit;
+    height:8px;
+}
+TD.SearchSpaceline
+{
+}
+TABLE.SearchFooter
+{
+    border-collapse:collapse;
+    border-width:0;
+    table-layout:auto;
+    font-size:8pt;
+    width:100%;
+}
+TR.SearchFooter
+{
+    background-color:#FFCC99;
+    color:inherit;
+}
+TD.SearchFooter
+{
+    border-width:0;
+    border-color:#AAAAAA;
+    border-style:solid;
+    text-align:left;
+}
+
+
+
+TABLE.Invisible
+{
+    font-family:arial, sans-serif;
+    font-size:8pt;
+    border-width:0;
+    table-layout:auto;
+    margin:auto;
+    text-align:center;
+}
+TABLE.InvisibleHeader
+{
+    border-collapse:collapse;
+    table-layout:auto;
+    border-width:0;
+    font-size:10pt;
+    font-weight:bold;
+    width:100%;
+    text-align:center;
+}
+TR.InvisibleHeader
+{
+}
+TD.InvisibleHeader
+{
+    border-width:0;
+    border-style:solid;
+}
+TABLE.InvisibleBody
+{
+    border-collapse:collapse;
+    table-layout:auto;
+    border-width:0;
+    font-size:8pt;
+    margin:auto;
+    text-align:center;
+}
+TR.InvisibleBody
+{
+}
+TD.InvisibleBody
+{
+    border-width:0;
+    border-style:solid;
+}
+TABLE.InvisibleFooter
+{
+    border-collapse:collapse;
+    font-family:arial, sans-serif;
+    font-size:8pt;
+    table-layout:auto;
+    width:100%;
+    text-align:center;
+}
+TR.InvisibleFooter
+{
+}
+TD.InvisibleFooter
+{
+    font-size:8pt;
+}
+TR.InvisibleSpaceline
+{
+    height:5px;
+}
+TD.InvisibleSpaceline
+{
+}
+
+
+
+UL.RequestSummaryHeader
+{
+    text-align:left;
+    margin:0;
+    padding:0;
+    list-style-position:outside;
+    list-style-type:none;
+    font-family:arial, sans-serif;
+    font-size:10pt;
+    font-weight:bold;
+}
+LI.RequestSummaryHeader
+{
+    display:list-item;
+}
+UL.RequestSummary
+{
+    text-align:left;
+    margin:3px 3px 16px 16px;
+    padding:0;
+    list-style-position:inside;
+}
+LI.RequestSummary
+{
+    display:list-item;
+}
+LI.RequestSummarySub
+{
+    margin-left:16px;
+}
+
+UL.ResultLink
+{
+    list-style-position:inside;
+    list-style-type:none;
+    font-family:arial, sans-serif;
+    font-size:10pt;
+    font-weight:bold;
+    text-align:center;
+    margin:16px 0 16px 0;
+    padding:0;
+}
+LI.ResultLink
+{
+    display:list-item;
+    margin:10px 0 10px -16px;
+}
+html>body LI.ResultLink
+{
+    display:list-item;
+    margin:10px 0 10px 0;
+}
+
+
+
+UL.ExcelStatistics
+{
+    width:110px;
+    float:left;
+    margin:3px 3px 3px 0;
+    padding:0;
+    list-style-position:outside;
+}
+LI.ExcelStatistics
+{
+    display:list-item;
+}
+DIV.Statistics
+{
+    margin-right:-649px;
+    width:649px;
+    float:left;
+    position:relative;
+}
+
+
+
+UL.ContactHeader
+{
+    margin:16px 0 0 0;
+    padding:0 0 0 16px;
+    font-family:arial, sans-serif;
+    font-size:10pt;
+    font-weight:bold;
+    list-style-position:outside;
+    list-style-type:none;
+}
+LI.ContactHeader
+{
+    display:list-item;
+}
+UL.Contact
+{
+    margin:3px 3px 3px 16px;
+    padding:0;
+    list-style-position:outside;
+    list-style-type:none;
+}
+LI.Contact
+{
+    display:list-item;
+}
+
+
+
+UL.DownloadHeader
+{
+    margin:0;
+    padding:16px 0 0 16px;
+    font-family:arial, sans-serif;
+    font-size:10pt;
+    font-weight:bold;
+    list-style-position:outside;
+    clear:both;
+}
+LI.DownloadHeader
+{
+    display:list-item;
+}
+UL.Download
+{
+    margin:3px 3px 3px 16px;
+    padding:0;
+    list-style-position:inside;
+}
+LI.Download
+{
+    display:list-item;
+}
+UL.DownloadSize
+{
+    margin:3px 3px 3px 30px;
+    padding:0;
+    list-style-position:inside;
+    list-style-type:none;
+    float:left;
+}
+LI.DownloadSize
+{
+    display:list-item;
+}
+
+
+
+TABLE.WELCOMETABLE
+{
+    width:100%;
+    font-family:arial, sans-serif;
+    font-size:10pt;
+    padding:0;
+    border-collapse:collapse;
+    table-layout:auto;
+    margin-right:auto;
+    margin-left:0;
+}
+TR.WELCOMETABLE
+{
+    padding:0;
+    height:25px;
+}
+TR.WELCOMETABLESKIP
+{
+    padding:0;
+    height:25px;
+}
+TD.WELCOMETABLEHEADER
+{
+    padding:0;
+    font-size:12pt;
+    text-align:left;
+    width:142px;
+}
+TD.WELCOMETABLE
+{
+    padding:0;
+    font-size:10pt;
+    text-align:left;
+}
+p.WELCOMETABLE
+{
+    font-size:10pt;
+    text-align:left;
+    text-indent:1cm;
+}

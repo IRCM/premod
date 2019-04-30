@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+    Copyright (c) 2013 Institut de recherches cliniques de Montreal (IRCM)
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU Affero General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU Affero General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+-->
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper
+  namespace="ca.mcgill.genomequebec.premod.persistence.mapper.NucleotideMapper">
+
+  <cache readOnly="true" />
+
+  <resultMap id="NucleotideMap" type="ca.mcgill.genomequebec.premod.business.Nucleotide">
+    <result property="organism" column="nucleotide__organism" />
+    <result property="mrna" column="nucleotide__mrna" />
+    <result property="gene" column="nucleotide__gene" />
+    <result property="chromosome" column="nucleotide__chromosome" />
+    <result property="strand" column="nucleotide__strand" />
+    <result property="start" column="nucleotide__start" />
+    <result property="end" column="nucleotide__end" />
+    <result property="codingStart" column="nucleotide__codingStart" />
+    <result property="codingEnd" column="nucleotide__codingEnd" />
+    <result property="locusLink" column="nucleotide__locusLink" />
+  </resultMap>
+  <resultMap id="Exons"
+    type="ca.mcgill.genomequebec.premod.persistence.mapper.NucleotideMapper$Exons">
+    <result property="count" column="nucleotide__exonCount" />
+    <result property="exonStarts" column="nucleotide__exonStarts"
+      typeHandler="ca.mcgill.genomequebec.premod.persistence.mapper.ExonLocationTypeHandler" />
+    <result property="exonEnds" column="nucleotide__exonEnds"
+      typeHandler="ca.mcgill.genomequebec.premod.persistence.mapper.ExonLocationTypeHandler" />
+  </resultMap>
+
+
+  <sql id="columns">
+    nucleotide.organism AS nucleotide__organism,
+    nucleotide.mrna AS nucleotide__mrna,
+    nucleotide.gene AS nucleotide__gene,
+    nucleotide.chromosome AS nucleotide__chromosome,
+    nucleotide.strand AS nucleotide__strand,
+    nucleotide.start AS nucleotide__start,
+    nucleotide.end as nucleotide__end,
+    nucleotide.codingStart AS nucleotide__codingStart,
+    nucleotide.codingEnd as nucleotide__codingEnd,
+    nucleotide.locusLink AS nucleotide__locusLink
+  </sql>
+  <sql id="exonColumns">
+    nucleotide.exonCount AS nucleotide__exonCount,
+    nucleotide.exonStarts AS nucleotide__exonStarts,
+    nucleotide.exonEnds AS nucleotide__exonEnds
+  </sql>
+
+
+  <select id="selectByGeneName" resultMap="NucleotideMap"
+    parameterType="map">
+    SELECT
+    <include refid="columns" />
+    FROM nucleotide
+    WHERE nucleotide.gene = #{geneName}
+    AND nucleotide.organism = #{organism}
+  </select>
+  <select id="existsByGeneName" resultType="boolean"
+    parameterType="map">
+    SELECT IF(COUNT(nucleotide.gene) > 0, 1, 0)
+    FROM nucleotide
+    WHERE nucleotide.gene = #{geneName}
+    AND nucleotide.organism = #{organism}
+  </select>
+  <select id="selectByGeneId" resultMap="NucleotideMap"
+    parameterType="map">
+    SELECT
+    <include refid="columns" />
+    FROM nucleotide
+    WHERE nucleotide.locusLink = #{geneId}
+    AND nucleotide.organism = #{organism}
+  </select>
+  <select id="existsByGeneId" resultType="boolean" parameterType="map">
+    SELECT IF(COUNT(nucleotide.locusLink) > 0, 1, 0)
+    FROM nucleotide
+    WHERE nucleotide.locusLink = #{geneId}
+    AND nucleotide.organism = #{organism}
+  </select>
+  <select id="selectInWindow" resultMap="NucleotideMap"
+    parameterType="map">
+    SELECT
+    <include refid="columns" />
+    FROM nucleotide
+    WHERE nucleotide.organism = #{organism}
+    AND nucleotide.chromosome = #{window.chromosome}
+    AND nucleotide.end &gt;= #{window.start}
+    AND nucleotide.start &lt;= #{window.end}
+    ORDER BY nucleotide.start
+  </select>
+  <select id="selectExonsByNucleotide" resultMap="Exons"
+    parameterType="ca.mcgill.genomequebec.premod.business.Nucleotide">
+    SELECT
+    <include refid="exonColumns" />
+    FROM nucleotide
+    WHERE nucleotide.mrna = #{mrna}
+    AND nucleotide.chromosome = #{chromosome}
+    AND nucleotide.strand = #{strand}
+    AND nucleotide.start = #{start}
+    AND nucleotide.end = #{end}
+  </select>
+
+  <!-- Use only to update modules' upstream and downstream -->
+  <select id="selectUpstreamGenePlusByModule" resultMap="NucleotideMap"
+    useCache="false">
+    SELECT
+    <include refid="columns" />
+    FROM nucleotide
+    WHERE organism = #{organism}
+    AND chromosome = #{chromosome}
+    AND start = (
+    SELECT MAX(start)
+    FROM nucleotide
+    WHERE organism = #{organism}
+    AND chromosome = #{chromosome}
+    AND start &lt;= #{middlePosition}
+    AND strand = '+'
+    )
+    LIMIT 1
+  </select>
+  <select id="selectUpstreamGeneMinusByModule" resultMap="NucleotideMap"
+    useCache="false">
+    SELECT
+    <include refid="columns" />
+    FROM nucleotide
+    WHERE organism = #{organism}
+    AND chromosome = #{chromosome}
+    AND end = (
+    SELECT MIN(end)
+    FROM nucleotide
+    WHERE organism = #{organism}
+    AND chromosome = #{chromosome}
+    AND end &gt;= #{middlePosition}
+    AND strand = '-'
+    )
+    LIMIT 1
+  </select>
+  <select id="selectDownstreamGenePlusByModule" resultMap="NucleotideMap"
+    useCache="false">
+    SELECT
+    <include refid="columns" />
+    FROM nucleotide
+    WHERE organism = #{organism}
+    AND chromosome = #{chromosome}
+    AND start = (
+    SELECT MIN(start)
+    FROM nucleotide
+    WHERE organism = #{organism}
+    AND chromosome = #{chromosome}
+    AND start &gt;= #{middlePosition}
+    AND strand = '+'
+    )
+    LIMIT 1
+  </select>
+  <select id="selectDownstreamGeneMinusByModule" resultMap="NucleotideMap"
+    useCache="false">
+    SELECT
+    <include refid="columns" />
+    FROM nucleotide
+    WHERE organism = #{organism}
+    AND chromosome = #{chromosome}
+    AND end = (
+    SELECT MAX(end)
+    FROM nucleotide
+    WHERE organism = #{organism}
+    AND chromosome = #{chromosome}
+    AND end &lt;= #{middlePosition}
+    AND strand = '-'
+    )
+    LIMIT 1
+  </select>
+</mapper>
