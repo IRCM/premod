@@ -850,7 +850,7 @@ public class ExportForDownload {
         root = new File(args[0]);
         logger.info("Using directory {} for export", root);
       } else {
-        root = new File("f:/temp/premod");
+        root = new File("webdata");
         logger.warn("Using default directory {} for export", root);
       }
       root.mkdirs();
